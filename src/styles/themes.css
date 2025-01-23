@@ -1,0 +1,48 @@
+/* Base styles */
+:root {
+  --primary: #3B82F6;
+  --secondary: #1E40AF;
+  --background: #FFFFFF;
+  --text: #111827;
+}
+
+/* Minimalist theme */
+.theme-minimalist {
+  --primary: #000000;
+  --secondary: #333333;
+  --background: #FFFFFF;
+  --text: #000000;
+}
+
+/* Vibrant theme */
+.theme-vibrant {
+  --primary: #FF3366;
+  --secondary: #6B46C1;
+  --background: #FAFAFA;
+  --text: #2D3748;
+}
+
+/* Futuristic theme */
+.theme-futuristic {
+  --primary: #00F5FF;
+  --secondary: #7B2FFF;
+  --background: #0A0A0A;
+  --text: #E2E8F0;
+}
+
+/* Apply theme variables */
+.bg-theme-primary {
+  background-color: var(--primary);
+}
+
+.text-theme-primary {
+  color: var(--primary);
+}
+
+.bg-theme-background {
+  background-color: var(--background);
+}
+
+.text-theme-text {
+  color: var(--text);
+}
