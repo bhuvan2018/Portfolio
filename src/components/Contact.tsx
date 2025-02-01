@@ -16,10 +16,10 @@ const Contact = () => {
     try {
       setStatus('sending');
       await emailjs.sendForm(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_o17yyqp',
+        'template_0f6e8pl',
         formRef.current,
-        'YOUR_PUBLIC_KEY'
+        'x2oCH1LfVilF8i5ij'
       );
       setStatus('success');
       formRef.current.reset();
