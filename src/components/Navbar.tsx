@@ -39,7 +39,7 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
             className="flex-shrink-0"
           >
             <a href="#home" className="text-2xl font-bold text-gray-900 dark:text-white">
-              Portfolio
+              Bhuvan
             </a>
           </motion.div>
           
