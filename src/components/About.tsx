@@ -46,7 +46,7 @@ const About = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Download className="w-5 h-5 mr-2" />
-              Download Resume
+              Resume
             </motion.a>
           </div>
           <motion.div
