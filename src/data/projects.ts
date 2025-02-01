@@ -22,7 +22,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     description: 'Web Application built for women safety',
     longDescription: 'Web Application built for the safey of women',
     image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0',
-    technologies: ['React.js', 'Next.js', 'TypeScript', 'FramerMotion'],
+    technologies: ['React.js', 'Next.js', 'TypeScript', 'Framer-Motion'],
     features: [
       'SOS Alert',
       'Emergency Live Location Sharing',
