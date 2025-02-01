@@ -21,9 +21,8 @@ const Hero = () => {
             <Typewriter
               options={{
                 strings: [
-                  'Full Stack Developer',
-                  'Web3 Passionate',
-                  'UI/UX Designer',
+                  'NextJS Developer',
+                  'MERN Stack Developer',
                   'Problem Solver',
                   'Tech Enthusiast'
                 ],
