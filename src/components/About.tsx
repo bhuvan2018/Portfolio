@@ -25,7 +25,7 @@ const About = () => {
             </h2>
             <div className="space-y-4 text-gray-600 dark:text-gray-300">
               <p>
-                With good skilled experience in web development, I specialize in
+                With good skilled in web development, I specialize in
                 creating responsive and user-friendly applications using modern
                 technologies.
               </p>
@@ -39,7 +39,7 @@ const About = () => {
               </p>
             </div>
             <motion.a
-              href="/Resume.pdf"
+              href="/Resume (1).pdf"
               download
               className="inline-flex items-center px-6 py-3 mt-8 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
               whileHover={{ scale: 1.05 }}
