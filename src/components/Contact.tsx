@@ -139,7 +139,7 @@ const Contact = () => {
             className="relative h-[400px] rounded-lg overflow-hidden"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596073366!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1645564749428!5m2!1sen!2s"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3891.0257705976455!2d75.12596012464718!3d12.776838337520932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba4a2e9bd3788c3%3A0xcbfc8273889f8d8b!2sKambalabettu%2C%20Karnataka%20574220!5e0!3m2!1sen!2sin!4v1738408466760!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
