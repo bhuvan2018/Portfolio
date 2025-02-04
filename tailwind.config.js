@@ -9,6 +9,7 @@ export default {
       },
       animation: {
         'bounce-slow': 'bounce 3s infinite',
+        'spin-slow': 'spin 3s linear infinite',
       },
     },
   },
