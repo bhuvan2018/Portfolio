@@ -3,11 +3,111 @@ import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import { ArrowDown, Sparkles } from 'lucide-react';
 
+const SparkleElement = ({ delay = 0, size = 2, color = "blue" }) => (
+  <motion.div
+    className={`absolute w-${size} h-${size} rounded-full ${color} opacity-0`}
+    animate={{
+      scale: [0, 1, 0],
+      opacity: [0, 0.8, 0],
+      y: [-20, 20],
+    }}
+    transition={{
+      duration: 2,
+      delay,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }}
+  />
+);
+
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-950/20 dark:to-transparent opacity-50"></div>
       
+      {/* Sparkles Container */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Top Left Sparkle Group */}
+        <div className="absolute top-20 left-20">
+          <SparkleElement color="bg-blue-400/30" delay={0} size={3} />
+          <SparkleElement color="bg-purple-400/30" delay={0.5} size={2} />
+          <SparkleElement color="bg-pink-400/30" delay={1} size={4} />
+        </div>
+        
+        {/* Top Right Sparkle Group */}
+        <div className="absolute top-40 right-32">
+          <SparkleElement color="bg-blue-400/30" delay={0.3} size={4} />
+          <SparkleElement color="bg-purple-400/30" delay={0.8} size={3} />
+          <SparkleElement color="bg-pink-400/30" delay={1.3} size={2} />
+        </div>
+        
+        {/* Bottom Left Sparkle Group */}
+        <div className="absolute bottom-32 left-40">
+          <SparkleElement color="bg-blue-400/30" delay={0.6} size={2} />
+          <SparkleElement color="bg-purple-400/30" delay={1.1} size={4} />
+          <SparkleElement color="bg-pink-400/30" delay={1.6} size={3} />
+        </div>
+        
+        {/* Bottom Right Sparkle Group */}
+        <div className="absolute bottom-40 right-24">
+          <SparkleElement color="bg-blue-400/30" delay={0.9} size={3} />
+          <SparkleElement color="bg-purple-400/30" delay={1.4} size={2} />
+          <SparkleElement color="bg-pink-400/30" delay={1.9} size={4} />
+        </div>
+        
+        {/* Center Sparkle Group */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <SparkleElement color="bg-blue-400/20" delay={0.2} size={4} />
+          <SparkleElement color="bg-purple-400/20" delay={0.7} size={3} />
+          <SparkleElement color="bg-pink-400/20" delay={1.2} size={5} />
+        </div>
+      </div>
+
+      {/* Floating Orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div 
+          className="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"
+          animate={{
+            y: [0, 20, 0],
+            x: [0, 10, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute top-1/4 -left-4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"
+          animate={{
+            y: [0, -20, 0],
+            x: [0, -10, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-1/4 -right-4 w-28 h-28 bg-pink-500/10 rounded-full blur-xl"
+          animate={{
+            y: [0, 15, 0],
+            x: [0, -15, 0],
+            scale: [1, 1.15, 1],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,8 +161,7 @@ const Hero = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            Passionate about creating beautiful, functional, and user-friendly applications
-            that solve real-world problems.
+            Driven to build elegant, effective, and user-centric solutions that address real-world challenges.
           </motion.p>
 
           <div className="flex justify-center space-x-4">
@@ -120,13 +219,6 @@ const Hero = () => {
       >
         <ArrowDown className="w-6 h-6 text-gray-600 dark:text-gray-400" />
       </motion.div>
-
-      {/* Background animated elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute top-1/4 -left-4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl animate-pulse delay-700"></div>
-        <div className="absolute bottom-1/4 -right-4 w-28 h-28 bg-pink-500/10 rounded-full blur-xl animate-pulse delay-500"></div>
-      </div>
     </section>
   );
 };
