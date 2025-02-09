@@ -92,17 +92,18 @@ const About = () => {
             className="relative group"
           >
             {/* Image Container with hover effects */}
-            <div className="relative rounded-lg overflow-hidden transform transition-transform duration-500 hover:scale-105">
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <img
-                src="/Photo1.jpg"
-                alt="Professional headshot"
-                className="rounded-lg shadow-2xl w-full h-auto transform transition-transform duration-500 group-hover:scale-110"
-              />
-              {/* Decorative elements */}
-              <div className="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-blue-500 rounded-tl-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></div>
-              <div className="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-purple-500 rounded-br-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></div>
-            </div>
+            <div className="relative rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-105">
+  <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/30 to-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+  <img
+    src="/Photo1.jpg"
+    alt="Professional headshot"
+    className="rounded-xl shadow-lg w-full h-auto transform transition-transform duration-500 group-hover:scale-110"
+  />
+  {/* Decorative elements */}
+  <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-blue-500 rounded-tl-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></div>
+  <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-purple-500 rounded-br-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></div>
+</div>
+
           </motion.div>
         </motion.div>
       </div>
