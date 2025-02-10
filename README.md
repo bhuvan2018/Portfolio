@@ -30,12 +30,12 @@ Developed a departmental fest website for MCA 1st and 2nd-year students, featuri
 4. Run the project locally:
    ```bash
    npm run dev
-5. The website should now be running on
+5. The website should now be running on:
    ```bash
    http://localhost:3000. 
-6. Live URL
+6. You can view the live website here:
    ```bash
-   You can view the live website here: TechFusion 2K25
-7. GitHub Link
+   https://techfusion2k25.netlify.app
+7. Visit the GitHub repository:
    ```bash
-   Visit the GitHub repository: github.com/bhuvan2018/TechFusion2K25
+   github.com/bhuvan2018/TechFusion2K25
