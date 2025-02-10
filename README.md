@@ -21,18 +21,21 @@ Developed a departmental fest website for MCA 1st and 2nd-year students, featuri
 1. Clone this repository to your local machine:
    ```bash
    git clone https://github.com/bhuvan2018/TechFusion2K25.git
-Navigate to the project directory:
-cd TechFusion2K25
-
-Install the necessary dependencies using npm:
-npm install
-
-Run the project locally:
-npm run dev
-The website should now be running on http://localhost:3000. 
-
-Live URL
-You can view the live website here: TechFusion 2K25
-
-GitHub Link
-Visit the GitHub repository: github.com/bhuvan2018/TechFusion2K25
+2. Navigate to the project directory:
+   ```bash
+   cd TechFusion2K25
+3. Install the necessary dependencies using npm:
+   ```bash
+   npm install
+4. Run the project locally:
+   ```bash
+   npm run dev
+5. The website should now be running on
+   ```bash
+   http://localhost:3000. 
+6. Live URL
+   ```bash
+   You can view the live website here: TechFusion 2K25
+7. GitHub Link
+   ```bash
+   Visit the GitHub repository: github.com/bhuvan2018/TechFusion2K25
