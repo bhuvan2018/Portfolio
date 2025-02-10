@@ -18,19 +18,13 @@ export const skillsData: (Skill & { icon: any; description: string })[] = [
     name: 'Database Management',
     level: 80,
     icon: Database,
-    description: 'MySQL, MongoDB, PostgreSQL',
+    description: 'MySQL, MongoDB, Firebase',
   },
   {
     name: 'DevOps',
     level: 75,
     icon: Wrench,
-    description: 'Git, Github, Docker',
-  },
-  {
-    name: 'Security',
-    level: 70,
-    icon: Shield,
-    description: 'Web security, authentication, encryption',
+    description: 'Git, Github',
   },
   {
     name: 'Testing',

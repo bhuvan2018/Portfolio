@@ -3,7 +3,7 @@ import type { Project } from '../types';
 export const projectsData: (Project & { features?: string[] })[] = [
   {
     id: 1,
-    title: 'Enhancing Image Clarity with Neural Network-Based Denoising Autoencoder',
+    title: 'Enhancing Image Clarity with Neural Network-Based Denoising Autoencoder (ONGOING)',
     description: 'A Real-Time Noise Reduction',
     longDescription: 'Capable of effectively reconstructing clean images from noisy images.',
     image: 'https://images.unsplash.com/photo-1557821552-17105176677c',
@@ -13,7 +13,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
       'Noise Reduction',
       'Performance Evaluation'
     ],
-    liveDemo: 'https://example.com/ecommerce',
+    liveDemo: '',
     github: 'https://github.com/bhuvan2018/denoising-autoencoder',
   },
   {
@@ -28,7 +28,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
       'Emergency Live Location Sharing',
       'Safety Routes'
     ],
-    liveDemo: 'https://example.com/taskmanager',
+    liveDemo: '',
     github: 'https://github.com/bhuvan2018/women_safety',
   },
   {
@@ -61,12 +61,12 @@ export const projectsData: (Project & { features?: string[] })[] = [
       'Quiz Dashboard',
       'Contact Me'
     ],
-    liveDemo: 'https://example.com',
+    liveDemo: '',
     github: 'https://github.com/bhuvan2018/quiztastic-dash',
   },
   {
     id: 5,
-    title: 'Pic-to-Toon - Cartoonify Your Memories',
+    title: 'Pic-to-Toon - Cartoonify Your Memories (ONGOING)',
     description: 'A user-friendly app built for transforming your photos into delightful cartoons.',
     longDescription: 'Welcome to Pic-to-Toon! This website lets you transform your photos into delightful cartoons with ease.',
     image: 'https://images.unsplash.com/photo-1561484930-998b6a7b22e8',
@@ -77,7 +77,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
       'Customizable effects',
       'High-quality cartoon outputs',
     ],
-    liveDemo: 'https://example.com',
+    liveDemo: '',
     github: 'https://github.com/bhuvan2018/Pic-to-Toon',
   },
   {
@@ -86,14 +86,13 @@ export const projectsData: (Project & { features?: string[] })[] = [
     description: 'An IoT-enabled Smart Fuel Flow Meter to efficiently monitor and manage fuel usage.',
     longDescription: 'Our IoT-enabled Smart Fuel Flow Meter provides real-time, accurate fuel measurements during refueling, enhancing transaction efficiency and preventing fraud.',
     image: 'https://images.unsplash.com/photo-1561484930-998b6a7b22e8',
-    technologies: ['Arduino', 'IoT', 'C++', 'ThingSpeak', 'Flow Sensors', 'ESP32 MCU', 'LCD Display', 'Battery'],
+    technologies: ['Arduino', 'IoT', 'C++', 'Flow Sensors', 'ESP32 MCU', 'LCD Display'],
     features: [
       'Compatibility with Various Fuel Types',
       'Real-Time Data Acquisition and Display',
-      'Efficient Battery Operation',
       'Portability and Calibration',
     ],
-    liveDemo: 'https://example.com',
+    liveDemo: '',
     github: 'https://github.com/bhuvan2018/Smart-Fuel-Flow-Meter',
   },
 ];

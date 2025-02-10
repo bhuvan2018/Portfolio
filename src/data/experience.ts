@@ -4,11 +4,10 @@ export const experienceData: Experience[] = [
   {
     title: 'MERN Stack Intern',
     company: 'Zephyr Technologies & Solutions Pvt Ltd.',
-    period: '2024 - Present',
+    period: 'Nov 2024 - Jan 2025',
     description: [
-      'Led development of microservices architecture using Node.js and React',
+      'Led development using Node.js and React',
       'Improved application performance by 40% through optimization',
-      'Mentored junior developers and conducted code reviews',
     ],
   },
   {
@@ -16,8 +15,7 @@ export const experienceData: Experience[] = [
     company: 'Freelancing.',
     period: '2023 - present',
     description: [
-      'Developed and maintained multiple client projects using MERN stack',
-      'Implemented CI/CD pipelines reducing deployment time by 60%',
+      'Developed and maintained projects using React.js & Next.js project',
       'Collaborated with UX team to improve user experience',
     ],
   },
