@@ -30,6 +30,6 @@ export const skillsData: (Skill & { icon: any; description: string })[] = [
     name: 'Testing',
     level: 85,
     icon: Code2,
-    description: 'ThunderClient, Postman',
+    description: 'ThunderClient',
   },
 ];
