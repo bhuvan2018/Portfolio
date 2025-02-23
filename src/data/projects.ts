@@ -52,7 +52,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     title: 'Quiz Master',
     description: 'A user friendly website built for quiz practices.',
     longDescription: 'Welcome to Quiz Master Website! This website is designed exclusively for users who wants to upscale their general knowledge on Tech.',
-    image: 'https://images.unsplash.com/photo-1561484930-998b6a7b22e8',
+    image: '/Main.png',
     technologies: ['React.js', 'Tailwind-CSS', 'JavaScript', 'TypeScript', 'Express.js', 'Node.js', 'MongoDB'],
     features: [
       'Intuitive User Friendly Website',
