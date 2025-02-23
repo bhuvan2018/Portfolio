@@ -36,7 +36,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     title: 'TechFusion 2K25',
     description: 'A website built for the Department level IT Fest',
     longDescription: 'Welcome to TechFusion 2K25! This website is designed exclusively for 1st & 2nd-year MCA students of VCET to register for various exciting events in our tech fest.',
-    image: 'https://images.unsplash.com/photo-1561484930-998b6a7b22e8',
+    image: '/tech-fusion.png',
     technologies: ['React.js', 'Tailwind-CSS', 'TypeScript','Framer-Motion','GSAP'],
     features: [
       'Intuitive User Friendly Website',
