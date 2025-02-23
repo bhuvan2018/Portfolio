@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Github, ChevronLeft } from 'lucide-react';
+import { ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
 import { projectsData } from '../data/projects';
 import LazyImage from './LazyImage';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
@@ -197,7 +197,6 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
   );
 };
 
-// Rest of the Projects component remains the same
 const Projects = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -206,6 +205,23 @@ const Projects = () => {
 
   const sectionRef = useRef<HTMLElement>(null);
   useScrollAnimation(sectionRef);
+
+  const [currentPage, setCurrentPage] = useState(0);
+  const projectsPerPage = 3;
+  const totalPages = Math.ceil(projectsData.length / projectsPerPage);
+
+  const nextPage = () => {
+    setCurrentPage((prev) => (prev + 1) % totalPages);
+  };
+
+  const prevPage = () => {
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  };
+
+  const currentProjects = projectsData.slice(
+    currentPage * projectsPerPage,
+    (currentPage + 1) * projectsPerPage
+  );
 
   return (
     <section ref={sectionRef} id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
@@ -226,10 +242,60 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectsData.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
+        <div className="relative">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentPage}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {currentProjects.map((project, index) => (
+                <ProjectCard key={project.id} project={project} index={index} />
+              ))}
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Navigation Buttons */}
+          <div className="flex justify-center mt-8 gap-4">
+            <motion.button
+              onClick={prevPage}
+              className="p-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              disabled={currentPage === 0}
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </motion.button>
+            <motion.button
+              onClick={nextPage}
+              className="p-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              disabled={currentPage === totalPages - 1}
+            >
+              <ChevronRight className="w-6 h-6" />
+            </motion.button>
+          </div>
+
+          {/* Page Indicators */}
+          <div className="flex justify-center mt-4 gap-2">
+            {Array.from({ length: totalPages }).map((_, index) => (
+              <motion.button
+                key={index}
+                onClick={() => setCurrentPage(index)}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  currentPage === index
+                    ? 'bg-blue-600'
+                    : 'bg-gray-300 dark:bg-gray-600'
+                }`}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
