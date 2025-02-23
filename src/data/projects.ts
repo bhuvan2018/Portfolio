@@ -21,7 +21,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     title: 'SafeWalk: Ensuring Women Safety in Public Spaces',
     description: 'Web Application built for women safety',
     longDescription: 'SafeWalk: Ensuring Women Safety in Public Spaces a web app built for the safety of women with features like safe routes, SOS alert messages and many more.',
-    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0',
+    image: '/safewalk.png',
     technologies: ['React.js', 'Tailwind-CSS', 'Next.js', 'TypeScript', 'Framer-Motion'],
     features: [
       'SOS Alert',
