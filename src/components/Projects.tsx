@@ -35,7 +35,6 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
       transition: { duration: 0.3 }
     }
   };
-
   return (
     <RippleEffect>
       <motion.div
