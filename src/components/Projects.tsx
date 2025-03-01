@@ -204,7 +204,6 @@ const Projects = () => {
   const nextPage = () => {
     setCurrentPage((prev) => (prev + 1) % totalPages);
   };
-
   const prevPage = () => {
     setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
   };
