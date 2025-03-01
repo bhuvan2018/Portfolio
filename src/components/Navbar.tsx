@@ -8,7 +8,6 @@ interface NavbarProps {
 const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
