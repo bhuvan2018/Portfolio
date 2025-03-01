@@ -26,7 +26,6 @@ const Skills = () => {
       },
     ],
   };
-
   const chartOptions = {
     plugins: {
       legend: {
