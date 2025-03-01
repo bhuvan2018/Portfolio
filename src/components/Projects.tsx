@@ -198,7 +198,6 @@ const Projects = () => {
   });
   const sectionRef = useRef<HTMLElement>(null);
   useScrollAnimation(sectionRef);
-
   const [currentPage, setCurrentPage] = useState(0);
   const projectsPerPage = 3;
   const totalPages = Math.ceil(projectsData.length / projectsPerPage);
