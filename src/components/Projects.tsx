@@ -229,7 +229,6 @@ const Projects = () => {
             problem-solving approaches.
           </p>
         </motion.div>
-
         <div className="relative">
           <AnimatePresence mode="wait">
             <motion.div
