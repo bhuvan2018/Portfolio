@@ -9,7 +9,6 @@ const Skills = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
-
   const chartData = {
     labels: skillsData.map(skill => skill.name),
     datasets: [
