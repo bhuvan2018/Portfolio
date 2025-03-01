@@ -37,7 +37,6 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
               Bhuvan
             </a>
           </motion.div>
-          
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link, index) => (
               <motion.a
