@@ -22,7 +22,6 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
     { href: '#skills', label: 'Skills' },
     { href: '#contact', label: 'Contact' },
   ];
-
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
       scrolled ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'
