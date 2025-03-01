@@ -108,8 +108,6 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
                 </div>
               </motion.div>
             </div>
-
-            
             <div className="absolute w-full h-full backface-hidden rotateY-180">
               <motion.div
                 className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg h-full p-6"
