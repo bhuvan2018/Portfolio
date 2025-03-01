@@ -191,7 +191,6 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
     </RippleEffect>
   );
 };
-
 const Projects = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
