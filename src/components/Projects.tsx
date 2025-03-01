@@ -29,7 +29,6 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
       transition: { duration: 0.3 }
     }
   };
-
   const overlayVariants = {
     hover: {
       opacity: 1,
