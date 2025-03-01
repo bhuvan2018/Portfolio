@@ -5,7 +5,6 @@ interface NavbarProps {
   isDark: boolean;
   toggleTheme: () => void;
 }
-
 const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
