@@ -207,7 +207,6 @@ const Projects = () => {
   const prevPage = () => {
     setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
   };
-
   const currentProjects = projectsData.slice(
     currentPage * projectsPerPage,
     (currentPage + 1) * projectsPerPage
