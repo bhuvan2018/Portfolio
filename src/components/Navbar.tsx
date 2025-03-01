@@ -96,5 +96,4 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
     </nav>
   );
 };
-
 export default Navbar;
