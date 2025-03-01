@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
