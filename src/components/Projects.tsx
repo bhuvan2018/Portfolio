@@ -265,7 +265,6 @@ const Projects = () => {
             </motion.button>
           </div>
 
-
           <div className="flex justify-center mt-4 gap-2">
             {Array.from({ length: totalPages }).map((_, index) => (
               <motion.button
