@@ -69,7 +69,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     title: 'Pic-to-Toon - Cartoonify Your Memories',
     description: 'A user-friendly app built for transforming your photos into delightful cartoons.',
     longDescription: 'Welcome to Pic-to-Toon! This website lets you transform your photos into delightful cartoons with ease.',
-    image: 'https://images.unsplash.com/photo-1561484930-998b6a7b22e8',
+    image: '/PTT.png',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Python', 'TensorFlow', 'Flask', 'Docker'],
     features: [
       'User-friendly interface',
