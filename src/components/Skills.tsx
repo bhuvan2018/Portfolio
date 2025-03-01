@@ -80,7 +80,7 @@ const Skills = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="grid grid-cols-2 gap-6"
           >
-            {skillsData.map((skill, index) => (
+            {skillsData.map((skill) => (
               <div
                 key={skill.name}
                 className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg"
