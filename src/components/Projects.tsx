@@ -201,7 +201,6 @@ const Projects = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const projectsPerPage = 3;
   const totalPages = Math.ceil(projectsData.length / projectsPerPage);
-
   const nextPage = () => {
     setCurrentPage((prev) => (prev + 1) % totalPages);
   };
