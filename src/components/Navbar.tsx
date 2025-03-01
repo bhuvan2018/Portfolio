@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
-
 interface NavbarProps {
   isDark: boolean;
   toggleTheme: () => void;
