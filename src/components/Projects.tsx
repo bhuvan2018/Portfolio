@@ -23,7 +23,6 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
       }
     }
   };
-
   const imageVariants = {
     hover: {
       scale: 1.1,
