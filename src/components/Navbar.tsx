@@ -68,7 +68,6 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
             </button>
           </div>
         </div>
-
         {/* Mobile menu */}
         <motion.div
           initial={false}
