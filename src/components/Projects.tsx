@@ -244,7 +244,6 @@ const Projects = () => {
               ))}
             </motion.div>
           </AnimatePresence>
-
           <div className="flex justify-center mt-8 gap-4">
             <motion.button
               onClick={prevPage}
