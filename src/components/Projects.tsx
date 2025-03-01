@@ -196,7 +196,6 @@ const Projects = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
-
   const sectionRef = useRef<HTMLElement>(null);
   useScrollAnimation(sectionRef);
 
