@@ -67,7 +67,6 @@ const Skills = () => {
           >
             <Doughnut data={chartData} options={chartOptions} />
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
