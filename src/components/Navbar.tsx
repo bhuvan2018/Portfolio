@@ -15,7 +15,6 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const navLinks = [
     { href: '#home', label: 'Home' },
     { href: '#about', label: 'About' },
