@@ -28,8 +28,8 @@ export const projectsData: (Project & { features?: string[] })[] = [
       'Emergency Live Location Sharing',
       'Safety Routes'
     ],
-    liveDemo: '',
-    github: 'https://github.com/bhuvan2018/women_safety',
+    liveDemo: 'http://kzmqu25tzbwjpsduv9lj.lite.vusercontent.net/',
+    github: 'https://github.com/bhuvan2018/safe_walk-App',
   },
   {
     id: 3,
