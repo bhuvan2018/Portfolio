@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -13,6 +13,7 @@ import CursorEffect from './components/CursorEffect';
 import Preloader from './components/Preloader';
 import VisitorCounter from './components/VisitorCounter';
 import Chatbot from './components/Chatbot';
+import MusicToggle from './components/MusicToggle';
 
 function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -49,6 +50,7 @@ function App() {
         <Footer />
         <VisitorCounter />
         <Chatbot />
+        <MusicToggle />
       </div>
     </HelmetProvider>
   );
