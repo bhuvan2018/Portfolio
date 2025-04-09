@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Volume2, VolumeX, Music2 } from 'lucide-react';
+import { VolumeX, Music2 } from 'lucide-react';
 
 const MusicToggle = () => {
   const [isPlaying, setIsPlaying] = useState(false);
