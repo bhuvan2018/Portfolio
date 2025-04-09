@@ -7,12 +7,10 @@ const MusicToggle = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Using a more reliable music source
     audioRef.current = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
     audioRef.current.loop = true;
     audioRef.current.volume = 0.7;
 
-    // Add error handling
     if (audioRef.current) {
       audioRef.current.addEventListener('error', (e) => {
         console.error('Audio loading error:', e);
@@ -35,7 +33,6 @@ const MusicToggle = () => {
       if (isPlaying) {
         await audioRef.current.pause();
       } else {
-        // Reload and play to ensure it works every time
         audioRef.current.currentTime = 0;
         await audioRef.current.play();
       }
@@ -53,17 +50,13 @@ const MusicToggle = () => {
       className="fixed bottom-8 left-8 z-50"
     >
       <div className="relative group">
-        {/* Background blur effect */}
         <div className="absolute inset-0 bg-white/10 dark:bg-black/10 backdrop-blur-lg rounded-full" />
-
-        {/* Main toggle container */}
         <motion.button
           onClick={toggleMusic}
           className="relative flex items-center gap-4 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-pink-600/10 p-4 rounded-full backdrop-blur-sm border border-white/20 dark:border-gray-700/50 shadow-xl hover:shadow-2xl transition-all duration-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          {/* Toggle switch */}
           <div className="relative w-16 h-8 bg-gray-200 dark:bg-gray-700 rounded-full transition-colors duration-300">
             <motion.div
               className={`absolute top-1 left-1 w-6 h-6 rounded-full shadow-lg ${
@@ -82,8 +75,6 @@ const MusicToggle = () => {
               }}
             />
           </div>
-
-          {/* Animated icon */}
           <div className="relative">
             <AnimatePresence mode="wait">
               <motion.div
@@ -102,7 +93,6 @@ const MusicToggle = () => {
               </motion.div>
             </AnimatePresence>
 
-            {/* Animated rings when playing */}
             {isPlaying && (
               <>
                 {[...Array(3)].map((_, i) => (
@@ -125,7 +115,6 @@ const MusicToggle = () => {
             )}
           </div>
 
-          {/* Equalizer bars */}
           <AnimatePresence>
             {isPlaying && (
               <motion.div 
@@ -154,7 +143,6 @@ const MusicToggle = () => {
           </AnimatePresence>
         </motion.button>
 
-        {/* Floating label */}
         <motion.div
           className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/75 text-white text-sm py-2 px-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm border border-white/10"
           initial={false}
