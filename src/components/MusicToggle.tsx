@@ -142,7 +142,6 @@ const MusicToggle = () => {
             )}
           </AnimatePresence>
         </motion.button>
-
         <motion.div
           className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/75 text-white text-sm py-2 px-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm border border-white/10"
           initial={false}
