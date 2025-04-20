@@ -6,7 +6,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     title: 'Automated News Article Classification using ML (HACKATHON PROJECT)',
     description: 'Interactive Text Classification with Flet UI',
     longDescription: 'An NLP-based system that classifies news articles into categories using tokenization, lemmatization, and BERT vectorization with a Flet-powered user interface.',
-    image: 'https://images.unsplash.com/photo-1581092580502-0310c162f05b',
+    image: '/anac.png',
     technologies: ['Flet', 'Python', 'Machine Learning', 'NLP', 'BERT'],
     features: [
       'News Text Preprocessing',
