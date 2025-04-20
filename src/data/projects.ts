@@ -22,7 +22,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     description: 'Mobile Application built for women safety',
     longDescription: 'SafeWalk: Ensuring Women Safety in Public Spaces a web app built for the safety of women with features like safe routes, SOS alert messages and many more.',
     image: '/safewalk.png',
-    technologies: ['React Native', 'Next.js', 'TypeScript', 'Framer-Motion'],
+    technologies: ['React Native', 'Next.js', 'TypeScript', 'Framer-Motion','Tailwind-CSS'],
     features: [
       'SOS Alert',
       'Emergency Live Location Sharing',
