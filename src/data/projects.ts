@@ -82,7 +82,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
   },
   {
     id: 6,
-    title: 'IoT Enabled Smart Fuel Flow Meter',
+    title: 'Real-Time IoT Enabled Smart Fuel Flow Meter',
     description: 'An IoT-enabled Smart Fuel Flow Meter to efficiently monitor and manage fuel usage.',
     longDescription: 'Our IoT-enabled Smart Fuel Flow Meter provides real-time, accurate fuel measurements during refueling, enhancing transaction efficiency and preventing fraud.',
     image: 'https://images.unsplash.com/photo-1561484930-998b6a7b22e8',
