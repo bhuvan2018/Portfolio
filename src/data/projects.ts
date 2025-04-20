@@ -53,7 +53,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     description: 'A user friendly website built for quiz practices.',
     longDescription: 'Welcome to Quiz Master Website! This website is designed exclusively for users who wants to upscale their general knowledge on Tech.',
     image: '/Main.png',
-    technologies: ['React.js', 'Tailwind-CSS', 'JavaScript', 'TypeScript', 'Express.js', 'Node.js', 'MongoDB'],
+    technologies: ['React.js', 'Tailwind-CSS', 'TypeScript', 'Express.js', 'Node.js', 'MongoDB'],
     features: [
       'Intuitive User Friendly Website',
       'Quiz Registration',
