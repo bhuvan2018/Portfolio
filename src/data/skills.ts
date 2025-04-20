@@ -15,6 +15,18 @@ export const skillsData: (Skill & { icon: any; description: string })[] = [
     description: 'Next.js, Node.js, Express.js',
   },
   {
+    name: 'Mobile App Development',
+    level: 85,
+    icon: Layout,
+    description: 'React Native, Flet',
+  },
+  {
+    name: 'Programming Languages',
+    level: 85,
+    icon: Code2,
+    description: 'C, Java, Python, TypeScript',
+  },
+  {
     name: 'Database Management',
     level: 80,
     icon: Database,
@@ -25,11 +37,5 @@ export const skillsData: (Skill & { icon: any; description: string })[] = [
     level: 75,
     icon: Wrench,
     description: 'Git, Github',
-  },
-  {
-    name: 'Testing',
-    level: 85,
-    icon: Code2,
-    description: 'ThunderClient',
-  },
+  }
 ];
