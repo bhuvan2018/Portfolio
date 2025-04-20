@@ -2,20 +2,23 @@ import type { Project } from '../types';
 
 export const projectsData: (Project & { features?: string[] })[] = [
   {
-    id: 1,
-    title: 'Enhancing Image Clarity with Neural Network-Based Denoising Autoencoder (ONGOING)',
-    description: 'A Real-Time Noise Reduction',
-    longDescription: 'Capable of effectively reconstructing clean images from noisy images.',
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c',
-    technologies: ['Flet','Python', 'TensorFLow'],
+    id: 2,
+    title: 'Automated News Article Classification using ML (HACKATHON PROJECT)',
+    description: 'Interactive Text Classification with Flet UI',
+    longDescription: 'An NLP-based system that classifies news articles into categories using tokenization, lemmatization, and BERT vectorization with a Flet-powered user interface.',
+    image: 'https://images.unsplash.com/photo-1581092580502-0310c162f05b',
+    technologies: ['Flet', 'Python', 'Machine Learning', 'NLP', 'BERT'],
     features: [
-      'Building a Denoising Model',
-      'Noise Reduction',
-      'Performance Evaluation'
+      'News Text Preprocessing',
+      'BERT-based Text Vectorization',
+      'Category Prediction with ML Models',
+      'Interactive UI with Flet',
+      'Real-time Input & Output',
+      'Text Cleaning and Tokenization'
     ],
     liveDemo: '',
-    github: 'https://github.com/bhuvan2018/denoising-autoencoder',
-  },
+    github: 'https://github.com/bhuvan2018/news_article_classification'
+  },  
   {
     id: 2,
     title: 'SafeWalk: Ensuring Women Safety in Public Spaces',
