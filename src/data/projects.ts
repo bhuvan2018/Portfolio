@@ -7,7 +7,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     description: 'A Real-Time Noise Reduction',
     longDescription: 'Capable of effectively reconstructing clean images from noisy images.',
     image: 'https://images.unsplash.com/photo-1557821552-17105176677c',
-    technologies: ['Python', 'TensorFLow', 'Keras', 'Pillow'],
+    technologies: ['Flet','Python', 'TensorFLow', 'Pillow'],
     features: [
       'Building a Denoising Model',
       'Noise Reduction',
