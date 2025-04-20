@@ -86,7 +86,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     description: 'An IoT-enabled Smart Fuel Flow Meter to efficiently monitor and manage fuel usage.',
     longDescription: 'Our IoT-enabled Smart Fuel Flow Meter provides real-time, accurate fuel measurements during refueling, enhancing transaction efficiency and preventing fraud.',
     image: 'https://images.unsplash.com/photo-1561484930-998b6a7b22e8',
-    technologies: ['Arduino', 'IoT', 'C++', 'Flow Sensors', 'ESP32 MCU', 'LCD Display'],
+    technologies: ['Arduino', 'C++', 'Flow Sensor', 'ESP32 MCU', 'LCD Display'],
     features: [
       'Compatibility with Various Fuel Types',
       'Real-Time Data Acquisition and Display',
