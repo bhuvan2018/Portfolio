@@ -71,7 +71,7 @@ const About = () => {
               className="mt-8 relative inline-block group"
             >
               <motion.a
-                href="/Resume (2).pdf"
+                href="/Resume.pdf"
                 download
                 className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/30"
               >
