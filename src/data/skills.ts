@@ -6,7 +6,7 @@ export const skillsData: (Skill & { icon: any; description: string })[] = [
     name: 'Frontend Development',
     level: 90,
     icon: Layout,
-    description: 'HTML, BootStrap, Tailwind-CSS, JavaScript, TypeScript, React.js, Framer-Motion',
+    description: 'HTML, Tailwind-CSS, JavaScript, TypeScript, React.js, Framer-Motion',
   },
   {
     name: 'Backend Development',
