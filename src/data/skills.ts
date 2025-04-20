@@ -1,4 +1,4 @@
-import { Code2, Database, Layout, Server, Shield, Wrench } from 'lucide-react';
+import { Code2, Database, Layout, Server, Wrench } from 'lucide-react';
 import type { Skill } from '../types';
 
 export const skillsData: (Skill & { icon: any; description: string })[] = [
