@@ -114,71 +114,70 @@ const About = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative group"
+            className="relative group flex justify-center"
           >
             {/* Image Container with enhanced effects */}
-            <div className="relative rounded-2xl overflow-hidden transform perspective-1000">
+            <div className="relative w-[280px] md:w-[320px] aspect-square rounded-2xl overflow-hidden transform perspective-1000">
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 5 }}
                 transition={{ duration: 0.5 }}
-                className="relative z-10"
+                className="relative z-10 h-full"
               >
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-purple-500/20 to-pink-500/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Hexagonal Clip Path */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl" style={{ padding: '3px' }}>
+                  <div className="absolute inset-0 bg-white dark:bg-gray-900 rounded-2xl" />
+                </div>
                 
                 {/* Main Image */}
-                <img
-                  src="/Photo1.jpg"
-                  alt="Professional headshot"
-                  className="w-full h-auto rounded-2xl shadow-2xl transform transition-transform duration-500 group-hover:scale-105"
-                />
+                <div className="relative h-full rounded-2xl overflow-hidden">
+                  <img
+                    src="/Photo1.jpg"
+                    alt="Professional headshot"
+                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                  />
+                  
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-purple-500/20 to-pink-500/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
 
                 {/* Decorative Elements */}
                 <div className="absolute inset-0">
-                  {/* Top Left Corner */}
-                  <div className="absolute -top-2 -left-2 w-20 h-20">
-                    <div className="absolute w-full h-full border-t-4 border-l-4 border-blue-500 rounded-tl-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0" />
-                  </div>
-
-                  {/* Bottom Right Corner */}
-                  <div className="absolute -bottom-2 -right-2 w-20 h-20">
-                    <div className="absolute w-full h-full border-b-4 border-r-4 border-purple-500 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0" />
-                  </div>
-
-                  {/* Animated Gradient Border */}
-                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-pulse" style={{ padding: '2px' }}>
-                      <div className="w-full h-full bg-white dark:bg-gray-900 rounded-2xl" />
-                    </div>
-                  </div>
+                  {/* Animated Corner Accents */}
+                  {['-top-1 -left-1', '-top-1 -right-1', '-bottom-1 -left-1', '-bottom-1 -right-1'].map((position, index) => (
+                    <motion.div
+                      key={index}
+                      className={`absolute w-8 h-8 ${position}`}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </motion.div>
+                  ))}
                 </div>
 
                 {/* Floating Elements */}
-                <motion.div
-                  animate={{
-                    y: [-10, 10, -10],
-                    opacity: [0.5, 1, 0.5],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute -top-6 -right-6 w-12 h-12 bg-blue-500/20 rounded-full blur-xl"
-                />
-                <motion.div
-                  animate={{
-                    y: [10, -10, 10],
-                    opacity: [0.5, 1, 0.5],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1
-                  }}
-                  className="absolute -bottom-6 -left-6 w-12 h-12 bg-purple-500/20 rounded-full blur-xl"
-                />
+                {[...Array(3)].map((_, index) => (
+                  <motion.div
+                    key={index}
+                    className="absolute w-4 h-4 rounded-full"
+                    style={{
+                      background: `rgba(${index * 30 + 100}, 100, 255, 0.3)`,
+                      filter: 'blur(8px)',
+                    }}
+                    animate={{
+                      x: [0, 10, 0],
+                      y: [0, -10, 0],
+                      scale: [1, 1.2, 1],
+                    }}
+                    transition={{
+                      duration: 3,
+                      delay: index * 0.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+                ))}
               </motion.div>
             </div>
           </motion.div>
