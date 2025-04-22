@@ -11,12 +11,35 @@ const About = () => {
   return (
     <section id="about" className="py-20 relative overflow-hidden">
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-blue-50 to-gray-50 dark:from-gray-800 dark:via-blue-900/10 dark:to-gray-800 -z-10"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100 via-white to-purple-100 dark:from-blue-900/20 dark:via-gray-900 dark:to-purple-900/20 opacity-40"></div>
       
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200/20 dark:bg-blue-500/10 rounded-full mix-blend-multiply dark:mix-blend-overlay blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-200/20 dark:bg-purple-500/10 rounded-full mix-blend-multiply dark:mix-blend-overlay blur-xl animate-pulse delay-300"></div>
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+          className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -33,37 +56,40 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
-              About Me
+            <motion.div 
+              className="inline-block p-2 bg-blue-100/50 dark:bg-blue-900/50 rounded-2xl backdrop-blur-sm mb-6"
+              whileHover={{ scale: 1.05 }}
+            >
+              <span className="px-4 py-2 text-sm text-blue-800 dark:text-blue-200 font-medium">
+                About Me
+              </span>
+            </motion.div>
+            
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-6 flex items-center gap-3">
+              Crafting Digital Experiences
               <Sparkles className="w-6 h-6 text-blue-500 animate-pulse" />
             </h2>
-            <div className="space-y-4 text-gray-600 dark:text-gray-300 relative">
-              <motion.p
-                whileHover={{ x: 10 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="transition-colors hover:text-gray-900 dark:hover:text-white"
-              >
-                With good skilled in web development, I specialize in
-                creating responsive and user-friendly applications using modern
-                technologies.
-              </motion.p>
-              <motion.p
-                whileHover={{ x: 10 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="transition-colors hover:text-gray-900 dark:hover:text-white"
-              >
-                I'm passionate about solving complex problems and creating
-                intuitive user experiences that make a difference in people's lives.
-              </motion.p>
-              <motion.p
-                whileHover={{ x: 10 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="transition-colors hover:text-gray-900 dark:hover:text-white"
-              >
-                When I'm not coding, you can find me exploring new technologies,
-                contributing to open-source projects, or sharing my knowledge.
-              </motion.p>
+
+            <div className="space-y-6 text-gray-600 dark:text-gray-300 relative">
+              {[
+                "With good skilled in web development, I specialize in creating responsive and user-friendly applications using modern technologies.",
+                "I'm passionate about solving complex problems and creating intuitive user experiences that make a difference in people's lives.",
+                "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge."
+              ].map((text, index) => (
+                <motion.p
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ delay: 0.4 + index * 0.2 }}
+                  whileHover={{ x: 10 }}
+                  className="relative pl-6 transition-colors hover:text-gray-900 dark:hover:text-white"
+                >
+                  <span className="absolute left-0 top-2 w-2 h-2 bg-blue-500 rounded-full" />
+                  {text}
+                </motion.p>
+              ))}
             </div>
+
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -72,7 +98,7 @@ const About = () => {
               <motion.a
                 href="/Resume.pdf"
                 download
-                className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/30"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group"
               >
                 <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                 <span className="relative">
@@ -90,19 +116,71 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative group"
           >
-            {/* Image Container with hover effects */}
-            <div className="relative rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-105">
-  <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/30 to-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-  <img
-    src="/Photo1.jpg"
-    alt="Professional headshot"
-    className="rounded-xl shadow-lg w-full h-auto transform transition-transform duration-500 group-hover:scale-110"
-  />
-  {/* Decorative elements */}
-  <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-blue-500 rounded-tl-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></div>
-  <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-purple-500 rounded-br-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></div>
-</div>
+            {/* Image Container with enhanced effects */}
+            <div className="relative rounded-2xl overflow-hidden transform perspective-1000">
+              <motion.div
+                whileHover={{ scale: 1.05, rotateY: 5 }}
+                transition={{ duration: 0.5 }}
+                className="relative z-10"
+              >
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-purple-500/20 to-pink-500/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Main Image */}
+                <img
+                  src="/Photo1.jpg"
+                  alt="Professional headshot"
+                  className="w-full h-auto rounded-2xl shadow-2xl transform transition-transform duration-500 group-hover:scale-105"
+                />
 
+                {/* Decorative Elements */}
+                <div className="absolute inset-0">
+                  {/* Top Left Corner */}
+                  <div className="absolute -top-2 -left-2 w-20 h-20">
+                    <div className="absolute w-full h-full border-t-4 border-l-4 border-blue-500 rounded-tl-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0" />
+                  </div>
+
+                  {/* Bottom Right Corner */}
+                  <div className="absolute -bottom-2 -right-2 w-20 h-20">
+                    <div className="absolute w-full h-full border-b-4 border-r-4 border-purple-500 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0" />
+                  </div>
+
+                  {/* Animated Gradient Border */}
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-pulse" style={{ padding: '2px' }}>
+                      <div className="w-full h-full bg-white dark:bg-gray-900 rounded-2xl" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Elements */}
+                <motion.div
+                  animate={{
+                    y: [-10, 10, -10],
+                    opacity: [0.5, 1, 0.5],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute -top-6 -right-6 w-12 h-12 bg-blue-500/20 rounded-full blur-xl"
+                />
+                <motion.div
+                  animate={{
+                    y: [10, -10, 10],
+                    opacity: [0.5, 1, 0.5],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1
+                  }}
+                  className="absolute -bottom-6 -left-6 w-12 h-12 bg-purple-500/20 rounded-full blur-xl"
+                />
+              </motion.div>
+            </div>
           </motion.div>
         </motion.div>
       </div>
