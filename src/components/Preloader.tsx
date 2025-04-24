@@ -11,7 +11,7 @@ const Preloader = () => {
       setIsLoading(false);
     }, 2000);
 
-    // Simulate loading progress
+   
     const interval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
