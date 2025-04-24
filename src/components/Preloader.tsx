@@ -11,7 +11,6 @@ const Preloader = () => {
       setIsLoading(false);
     }, 2000);
 
-   
     const interval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
