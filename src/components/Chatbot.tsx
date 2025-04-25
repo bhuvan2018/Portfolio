@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Bot, User, Loader2, ChevronDown } from 'lucide-react';
-import OpenAI from 'openai';
+import { MessageCircle, X, Send, Bot, User, Loader2, ChevronDown, Sparkles } from 'lucide-react';
 
 interface Message {
   text: string;
@@ -9,16 +8,11 @@ interface Message {
   timestamp: Date;
 }
 
-const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true
-});
-
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     { 
-      text: "Hi! I'm Bhuvan's AI assistant. How can I help you today?",
+      text: "Hi! I'm Bhuvan's assistant. How can I help you today? You can ask me about Bhuvan's skills, experience, or projects!",
       isBot: true,
       timestamp: new Date()
     }
@@ -36,27 +30,31 @@ const Chatbot = () => {
     scrollToBottom();
   }, [messages]);
 
-  const generateResponse = async (userMessage: string) => {
-    try {
-      setIsTyping(true);
-      const completion = await openai.chat.completions.create({
-        messages: [
-          { 
-            role: "system", 
-            content: "You are Bhuvan's AI assistant. Be helpful, friendly, and knowledgeable about Bhuvan's skills and experience in web development, particularly with React, Node.js, and full-stack development. Keep responses concise and relevant."
-          },
-          { role: "user", content: userMessage }
-        ],
-        model: "gpt-3.5-turbo",
-      });
-
-      return completion.choices[0].message.content;
-    } catch (error) {
-      console.error('Error generating response:', error);
-      return "I apologize, but I'm having trouble connecting to my AI services right now. Please try again later or contact Bhuvan directly through the contact form.";
-    } finally {
-      setIsTyping(false);
+  const generateResponse = (userMessage: string): string => {
+    const normalizedMessage = userMessage.toLowerCase();
+    
+    // Predefined responses based on keywords
+    if (normalizedMessage.includes('skill') || normalizedMessage.includes('technology')) {
+      return "Bhuvan is skilled in React, Node.js, TypeScript, and full-stack development. He's particularly experienced with modern web technologies and responsive design.";
     }
+    
+    if (normalizedMessage.includes('experience') || normalizedMessage.includes('work')) {
+      return "Bhuvan has extensive experience as a Full Stack Developer, working with companies like Tech Innovations Inc. and Digital Solutions Ltd. He's led multiple successful projects and improved application performance significantly.";
+    }
+    
+    if (normalizedMessage.includes('project')) {
+      return "Bhuvan has worked on various impressive projects including an E-commerce Platform, Task Management App, and Weather Dashboard. Each project showcases his ability to create robust, user-friendly applications.";
+    }
+    
+    if (normalizedMessage.includes('contact') || normalizedMessage.includes('hire')) {
+      return "You can contact Bhuvan through the contact form in the Contact section. He's always open to discussing new opportunities and collaborations!";
+    }
+    
+    if (normalizedMessage.includes('education') || normalizedMessage.includes('study')) {
+      return "Bhuvan holds a Master's degree in Computer Science with a focus on AI and Machine Learning. He's also completed intensive training in modern web development technologies.";
+    }
+
+    return "I can tell you about Bhuvan's skills, experience, projects, education, or how to contact him. What would you like to know?";
   };
 
   const handleSend = async () => {
@@ -71,13 +69,18 @@ const Chatbot = () => {
       timestamp: new Date()
     }]);
 
-    const response = await generateResponse(userMessage);
-    
-    setMessages(prev => [...prev, { 
-      text: response || "I apologize, but I couldn't generate a response. Please try again.",
-      isBot: true,
-      timestamp: new Date()
-    }]);
+    setIsTyping(true);
+
+    // Simulate typing delay
+    setTimeout(() => {
+      const response = generateResponse(userMessage);
+      setMessages(prev => [...prev, { 
+        text: response,
+        isBot: true,
+        timestamp: new Date()
+      }]);
+      setIsTyping(false);
+    }, 1000);
   };
 
   const formatTime = (date: Date) => {
@@ -112,7 +115,10 @@ const Chatbot = () => {
             <div className="p-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white flex justify-between items-center">
               <div className="flex items-center gap-2">
                 <Bot className="w-5 h-5" />
-                <h3 className="font-semibold">Bhuvan's AI Assistant</h3>
+                <h3 className="font-semibold flex items-center gap-2">
+                  Bhuvan's Assistant
+                  <Sparkles className="w-4 h-4 text-yellow-300 animate-pulse" />
+                </h3>
               </div>
               <motion.button
                 onClick={() => setIsOpen(false)}
@@ -182,7 +188,7 @@ const Chatbot = () => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                    placeholder="Type your message..."
+                    placeholder="Ask about skills, projects, etc..."
                     className="flex-1 px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                   />
                   <motion.button
