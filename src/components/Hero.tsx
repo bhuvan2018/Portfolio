@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import { ArrowDown, Sparkles } from 'lucide-react';
@@ -143,8 +142,8 @@ const Hero = () => {
             <Typewriter
               options={{
                 strings: [
-                  'NextJS Developer',
-                  'MERN Stack Developer',
+                  'Next.js Developer',
+                  'React.js Developer',
                   'Problem Solver',
                   'Tech Enthusiast'
                 ],
