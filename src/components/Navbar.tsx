@@ -34,7 +34,6 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
-  // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -55,19 +54,34 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
     { href: '#contact', label: 'Contact', icon: ChevronRight },
   ];
 
-  const handleNavClick = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      const offset = 80; // Height of fixed navbar
+  // Much simpler and more reliable navigation function
+  const handleNavClick = (sectionId: string) => {
+    // Remove the '#' if it exists
+    const id = sectionId.replace('#', '');
+    
+    // Find the section element
+    const element = document.getElementById(id);
+    
+    if (!element) {
+      console.error(`Cannot find element with id: ${id}`);
+      return;
+    }
+    
+    // Close the mobile menu
+    setIsOpen(false);
+    
+    // Add a small delay to ensure UI updates before scrolling
+    setTimeout(() => {
+      // Get the position of the element relative to the document
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
+      const offsetPosition = elementPosition + window.pageYOffset - 80; // 80px for navbar height
+      
+      // Scroll to the element
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
       });
-    }
-    setIsOpen(false);
+    }, 10);
   };
 
   return (
