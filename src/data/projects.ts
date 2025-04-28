@@ -1,5 +1,4 @@
 import type { Project } from '../types';
-
 export const projectsData: (Project & { features?: string[] })[] = [
   {
     id: 1,
