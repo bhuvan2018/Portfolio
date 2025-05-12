@@ -4,7 +4,7 @@ import { Github, Linkedin, Twitter, Mail, Heart, Code, Coffee, ExternalLink, Spa
 const Footer = () => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/bhuvan2018', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/bhuvan-shetty', label: 'LinkedIn' },
     { icon: Twitter, href: 'https://twitter.com/yourusername', label: 'Twitter' },
     { icon: Mail, href: 'mailto:bhuvanshetty2018@gmail.com', label: 'Email' },
   ];
