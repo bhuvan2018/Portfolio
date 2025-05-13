@@ -72,7 +72,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     description: 'A user-friendly app built for transforming your photos into delightful cartoons.',
     longDescription: 'Welcome to Pic-to-Toon! This website lets you transform your photos into delightful cartoons with ease.',
     image: '/PTT.png',
-    technologies: ['Flet', 'Python', 'Docker'],
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Python', 'Flask', 'Docker'],
     features: [
       'User-friendly interface',
       'Easy photo upload and cartoonization',
