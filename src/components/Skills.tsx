@@ -5,6 +5,7 @@ import { Doughnut } from 'react-chartjs-2';
 import { skillsData } from '../data/skills';
 import { Sparkles, ChevronRight, ArrowUpRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Skills = () => {
