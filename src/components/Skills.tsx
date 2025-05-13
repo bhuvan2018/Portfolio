@@ -127,7 +127,7 @@ const Skills = () => {
       }
     }
   };
-  
+
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 }
@@ -137,7 +137,7 @@ const Skills = () => {
     <section id="skills" className="py-32 relative overflow-hidden">
       {/* Enhanced Background with Particles */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-100 via-white to-purple-100 dark:from-blue-900/20 dark:via-gray-900 dark:to-purple-900/20 opacity-40" />
-      
+
       {/* Floating particles */}
       {particles.map((i) => (
         <motion.div
@@ -172,11 +172,11 @@ const Skills = () => {
           }}
         />
       ))}
-      
+
       {/* Decorative Elements */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-blue-400/10 dark:bg-blue-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-32 h-32 bg-purple-400/10 dark:bg-purple-500/10 rounded-full blur-3xl" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
           ref={ref}
@@ -223,7 +223,7 @@ const Skills = () => {
             A comprehensive overview of my technical proficiency and expertise across
             various technologies and tools.
           </motion.p>
-          
+
           {/* Decorative divider */}
           <motion.div 
             className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-8 rounded-full"
@@ -243,7 +243,7 @@ const Skills = () => {
             {/* Circular gradient accent */}
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-2xl" />
             <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-r from-purple-400/20 to-blue-400/20 rounded-full blur-2xl" />
-            
+
             {/* Chart wrapper with animated entry */}
             <motion.div
               className="relative h-full w-full"
@@ -252,7 +252,7 @@ const Skills = () => {
               transition={{ duration: 0.6 }}
             >
               <Doughnut data={chartData} options={chartOptions} />
-              
+
               {/* Animated center content */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="text-center z-10">
@@ -275,7 +275,7 @@ const Skills = () => {
                         ease: "easeInOut"
                       }}
                     />
-                    
+
                     <div className="relative p-8">
                       <div className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent tracking-tight">
                         85%
@@ -288,7 +288,7 @@ const Skills = () => {
                 </div>
               </div>
             </motion.div>
-            
+
             {/* Chart label */}
             <div className="absolute -bottom-4 inset-x-0 flex justify-center">
               <motion.div
@@ -334,7 +334,7 @@ const Skills = () => {
                 >
                   <div className="h-full w-full bg-white dark:bg-gray-800 rounded-xl" />
                 </motion.div>
-                
+
                 <div className="relative p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg group-hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
                   <div className="flex items-center gap-4 mb-4">
                     <motion.div 
@@ -354,7 +354,7 @@ const Skills = () => {
                     <h3 className="text-lg font-semibold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
                       {skill.name}
                     </h3>
-                    
+
                     {/* Arrow indicator that appears on hover */}
                     <motion.div
                       initial={{ opacity: 0, x: -10 }}
@@ -382,7 +382,7 @@ const Skills = () => {
                           repeatDelay: 1
                         }}
                       />
-                      
+
                       {/* Progress bar */}
                       <motion.div
                         initial={{ width: 0 }}
@@ -410,7 +410,7 @@ const Skills = () => {
             ))}
           </motion.div>
         </div>
-        
+
         {/* Bottom decorative element */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
