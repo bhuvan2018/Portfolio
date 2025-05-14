@@ -3,7 +3,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
   {
     id: 1,
     title: 'Automated News Article Classification using ML (HACKATHON PROJECT)',
-    description: 'Interactive Text Classification with Flet UI',
+    description: 'Interactive Text Classification with Flet',
     longDescription: 'An NLP-based system that classifies news articles into categories using tokenization, lemmatization, and BERT vectorization with a Flet-powered user interface.',
     image: '/anac.png',
     technologies: ['Flet', 'Python', 'Machine Learning', 'NLP', 'BERT'],
@@ -21,7 +21,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
   {
     id: 2,
     title: 'SafeWalk: Ensuring Women Safety in Public Spaces',
-    description: 'Mobile Application built for women safety',
+    description: 'Mobile App built for women safety',
     longDescription: 'SafeWalk: Ensuring Women Safety in Public Spaces a web app built for the safety of women with features like safe routes, SOS alert messages and many more.',
     image: '/safewalk.png',
     technologies: ['React Native', 'Next.js', 'TypeScript', 'Framer-Motion','Tailwind-CSS'],
