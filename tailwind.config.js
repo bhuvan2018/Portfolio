@@ -5,7 +5,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'system-ui', 'sans-serif'],
+        sans: ['Outfit', 'system-ui', 'sans-serif'],
+        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        mono: ['Fira Code', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       animation: {
         'bounce-slow': 'bounce 3s infinite',
