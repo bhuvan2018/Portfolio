@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Import monospace font for code sections */
 .perspective-1000 {
   perspective: 1000px;
 }
@@ -18,7 +20,7 @@
   transform: rotateY(180deg);
 }
 
-/* Custom font styles */
+/* Enhanced custom font styles */
 @layer base {
   html {
     font-feature-settings: "salt", "ss01", "ss02", "cv01", "cv02";
@@ -26,12 +28,21 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight font-semibold;
+  h1, h2, h3 {
+    @apply font-display tracking-tight font-semibold;
+    letter-spacing: -0.03em;
+  }
+
+  h4, h5, h6 {
+    @apply font-sans tracking-tight font-semibold;
   }
 
   p {
     @apply leading-relaxed tracking-normal;
+  }
+
+  code {
+    @apply font-mono text-sm;
   }
 }
 
@@ -42,15 +53,18 @@
   }
   
   .heading-xl {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter;
+    @apply font-display text-4xl md:text-5xl lg:text-6xl font-bold;
+    letter-spacing: -0.04em;
   }
   
   .heading-lg {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+    @apply font-display text-3xl md:text-4xl lg:text-5xl font-bold;
+    letter-spacing: -0.03em;
   }
   
   .heading-md {
-    @apply text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight;
+    @apply font-display text-2xl md:text-3xl lg:text-4xl font-bold;
+    letter-spacing: -0.02em;
   }
 
   .text-body {
@@ -59,5 +73,18 @@
 
   .text-caption {
     @apply text-sm tracking-wide;
+  }
+  
+  /* New utility classes */
+  .text-display {
+    @apply font-display;
+  }
+  
+  .text-code {
+    @apply font-mono;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
   }
 }
