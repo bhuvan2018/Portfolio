@@ -15,7 +15,6 @@ export const projectsData: (Project & { features?: string[] })[] = [
       'Real-time Input & Output',
       'Text Cleaning and Tokenization'
     ],
-    liveDemo: '',
     github: 'https://github.com/bhuvan2018/news_article_classification'
   },  
   {
@@ -63,7 +62,6 @@ export const projectsData: (Project & { features?: string[] })[] = [
       'Quiz Dashboard',
       'Contact Me'
     ],
-    liveDemo: '',
     github: 'https://github.com/bhuvan2018/quiztastic-dash',
   },
   {
@@ -79,7 +77,6 @@ export const projectsData: (Project & { features?: string[] })[] = [
       'Customizable effects',
       'High-quality cartoon outputs',
     ],
-    liveDemo: '',
     github: 'https://github.com/bhuvan2018/Pic-to-Toon',
   },
   {
@@ -94,7 +91,6 @@ export const projectsData: (Project & { features?: string[] })[] = [
       'Real-Time Data Acquisition and Display',
       'Portability and Calibration',
     ],
-    liveDemo: '',
     github: 'https://github.com/bhuvan2018/Smart-Fuel-Flow-Meter',
   },
 ];
