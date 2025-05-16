@@ -10,7 +10,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Skills = () => {
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1,
   });
 
@@ -20,7 +20,6 @@ const Skills = () => {
 
   useEffect(() => {
     if (inView) {
-      // Delay showing chart for better visual sequence
       const timer = setTimeout(() => {
         setChartVisible(true);
       }, 400);
@@ -28,7 +27,6 @@ const Skills = () => {
     }
   }, [inView]);
 
-  // Add subtle animation for background particles
   const particles = Array.from({ length: 20 }, (_, i) => i);
 
   const chartData = {
@@ -135,10 +133,8 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-32 relative overflow-hidden">
-      {/* Enhanced Background with Particles */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-100 via-white to-purple-100 dark:from-blue-900/20 dark:via-gray-900 dark:to-purple-900/20 opacity-40" />
       
-      {/* Floating particles */}
       {particles.map((i) => (
         <motion.div
           key={i}
@@ -173,7 +169,6 @@ const Skills = () => {
         />
       ))}
       
-      {/* Decorative Elements */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-blue-400/10 dark:bg-blue-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-32 h-32 bg-purple-400/10 dark:bg-purple-500/10 rounded-full blur-3xl" />
       
@@ -224,7 +219,6 @@ const Skills = () => {
             various technologies and tools.
           </motion.p>
           
-          {/* Decorative divider */}
           <motion.div 
             className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-8 rounded-full"
             initial={{ width: 0 }}
@@ -240,11 +234,9 @@ const Skills = () => {
             transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 50 }}
             className="relative h-[450px] p-6 bg-white/80 dark:bg-gray-800/80 rounded-3xl backdrop-blur-sm shadow-xl border border-gray-100 dark:border-gray-700"
           >
-            {/* Circular gradient accent */}
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-2xl" />
             <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-r from-purple-400/20 to-blue-400/20 rounded-full blur-2xl" />
             
-            {/* Chart wrapper with animated entry */}
             <motion.div
               className="relative h-full w-full"
               initial={{ opacity: 0 }}
@@ -253,7 +245,6 @@ const Skills = () => {
             >
               <Doughnut data={chartData} options={chartOptions} />
               
-              {/* Animated center content */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="text-center z-10">
                   <motion.div
@@ -262,7 +253,6 @@ const Skills = () => {
                     transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
                     className="relative"
                   >
-                    {/* Pulsing background circle */}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full"
                       animate={{ 
@@ -289,7 +279,6 @@ const Skills = () => {
               </div>
             </motion.div>
             
-            {/* Chart label */}
             <div className="absolute -bottom-4 inset-x-0 flex justify-center">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -319,7 +308,6 @@ const Skills = () => {
                 onMouseEnter={() => setHoveredSkill(index)}
                 onMouseLeave={() => setHoveredSkill(null)}
               >
-                {/* Animated gradient border */}
                 <motion.div 
                   className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
                   style={{ padding: '2px' }}
@@ -355,7 +343,6 @@ const Skills = () => {
                       {skill.name}
                     </h3>
                     
-                    {/* Arrow indicator that appears on hover */}
                     <motion.div
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: hoveredSkill === index ? 1 : 0, x: hoveredSkill === index ? 0 : -10 }}
@@ -369,7 +356,6 @@ const Skills = () => {
                       {skill.description}
                     </p>
                     <div className="relative h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                      {/* Background glow effect */}
                       <motion.div
                         className="absolute inset-y-0 left-0 w-8 bg-white/50 h-full blur-sm z-10"
                         animate={{
@@ -383,7 +369,6 @@ const Skills = () => {
                         }}
                       />
                       
-                      {/* Progress bar */}
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: inView ? `${skill.level}%` : 0 }}
@@ -411,7 +396,6 @@ const Skills = () => {
           </motion.div>
         </div>
         
-        {/* Bottom decorative element */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
