@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Code2, Terminal, Braces, Brackets, Sparkles, Zap, Star } from 'lucide-react';
+import { Code2, Terminal, Braces, Brackets, Sparkles, Zap, Star, Laptop } from 'lucide-react';
 
 const Preloader = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,10 +28,12 @@ const Preloader = () => {
   }, []);
 
   const codeLines = [
-    "import { Life } from 'dreams';",
-    "const success = await goals.achieve();",
-    "if (success) celebrate();",
-    "export default Happiness;",
+    "import { Dreams } from 'future';",
+    "const portfolio = await build();",
+    "if (portfolio.isAwesome()) {",
+    "  await celebrate();",
+    "}",
+    "export default Success;",
   ];
 
   return (
@@ -43,20 +45,26 @@ const Preloader = () => {
           transition={{ duration: 0.5 }}
           className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
         >
-          {/* Animated Background Particles */}
-          {[...Array(50)].map((_, i) => (
+          {/* Enhanced Background Particles */}
+          {[...Array(80)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-blue-500/30"
+              className="absolute w-1 h-1"
               initial={{
                 x: Math.random() * window.innerWidth,
                 y: Math.random() * window.innerHeight,
+                scale: Math.random(),
               }}
               animate={{
                 x: Math.random() * window.innerWidth,
                 y: Math.random() * window.innerHeight,
                 scale: [0.5, 1.5, 0.5],
                 opacity: [0.3, 0.8, 0.3],
+                background: [
+                  'rgba(59, 130, 246, 0.3)',
+                  'rgba(139, 92, 246, 0.3)',
+                  'rgba(236, 72, 153, 0.3)',
+                ],
               }}
               transition={{
                 duration: 3 + Math.random() * 2,
@@ -67,26 +75,28 @@ const Preloader = () => {
           ))}
 
           <div className="relative">
-            {/* Code Container with Enhanced Effects */}
+            {/* Enhanced Code Container */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="absolute -top-32 left-1/2 -translate-x-1/2 w-64 bg-gray-800/50 rounded-lg p-4 backdrop-blur-sm border border-gray-700/50 overflow-hidden"
+              className="absolute -top-40 left-1/2 -translate-x-1/2 w-72 bg-gray-800/80 rounded-xl p-4 backdrop-blur-lg border border-gray-700/50 overflow-hidden"
             >
               {/* Animated Gradient Border */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20"
+                className="absolute inset-0"
                 animate={{
-                  backgroundPosition: ['0% 0%', '100% 100%'],
+                  background: [
+                    'linear-gradient(0deg, #3B82F6, #8B5CF6, #EC4899)',
+                    'linear-gradient(180deg, #EC4899, #3B82F6, #8B5CF6)',
+                    'linear-gradient(360deg, #8B5CF6, #EC4899, #3B82F6)',
+                  ],
                 }}
                 transition={{
-                  duration: 3,
+                  duration: 6,
                   repeat: Infinity,
                   ease: "linear",
                 }}
-                style={{
-                  backgroundSize: '200% 200%',
-                }}
+                style={{ opacity: 0.2 }}
               />
 
               {codeLines.map((line, index) => (
@@ -94,8 +104,8 @@ const Preloader = () => {
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="relative text-xs text-gray-300 font-mono mb-2 group"
+                  transition={{ delay: index * 0.15 }}
+                  className="relative text-xs font-mono mb-2 group"
                 >
                   <motion.span
                     className="text-gray-500 mr-2 inline-block"
@@ -110,7 +120,7 @@ const Preloader = () => {
                   >
                     {index + 1}
                   </motion.span>
-                  <span className="group-hover:text-blue-400 transition-colors">
+                  <span className="text-gray-300 group-hover:text-blue-400 transition-colors">
                     {line}
                   </span>
                   <motion.div
@@ -121,8 +131,8 @@ const Preloader = () => {
                 </motion.div>
               ))}
 
-              {/* Floating Icons */}
-              {[Star, Sparkles, Zap].map((Icon, index) => (
+              {/* Enhanced Floating Icons */}
+              {[Star, Sparkles, Zap, Laptop].map((Icon, index) => (
                 <motion.div
                   key={index}
                   className="absolute"
@@ -134,6 +144,7 @@ const Preloader = () => {
                     y: [0, -10, 0],
                     opacity: [0.2, 0.5, 0.2],
                     scale: [0.8, 1.2, 0.8],
+                    rotate: [0, 180, 360],
                   }}
                   transition={{
                     duration: 2,
@@ -148,7 +159,7 @@ const Preloader = () => {
 
             {/* Enhanced Main Loader */}
             <motion.div
-              className="relative w-32 h-32 flex items-center justify-center perspective-1000"
+              className="relative w-40 h-40 flex items-center justify-center perspective-1000"
               animate={{
                 rotate: 360,
               }}
@@ -159,13 +170,13 @@ const Preloader = () => {
               }}
             >
               {/* Enhanced Orbital Rings */}
-              {[...Array(3)].map((_, i) => (
+              {[...Array(4)].map((_, i) => (
                 <motion.div
                   key={i}
                   className="absolute inset-0 rounded-full"
                   style={{
                     border: '2px solid transparent',
-                    borderTopColor: `rgba(59, 130, 246, ${0.3 - i * 0.1})`,
+                    borderTopColor: `rgba(59, 130, 246, ${0.3 - i * 0.05})`,
                     transform: `rotateX(${60 + i * 30}deg) rotateY(${i * 45}deg)`,
                   }}
                   animate={{
@@ -207,7 +218,7 @@ const Preloader = () => {
 
               {/* Enhanced Center Logo */}
               <motion.div
-                className="absolute inset-0 m-auto w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg backdrop-blur-sm"
+                className="absolute inset-0 m-auto w-20 h-20 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg backdrop-blur-sm"
                 animate={{
                   scale: [1, 1.1, 1],
                   rotate: [0, 5, -5, 0],
@@ -233,14 +244,14 @@ const Preloader = () => {
                     ease: "linear",
                   }}
                 >
-                  <Code2 className="w-8 h-8 text-white" />
+                  <Code2 className="w-10 h-10 text-white" />
                 </motion.div>
               </motion.div>
             </motion.div>
 
             {/* Enhanced Progress Bar */}
             <motion.div 
-              className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-48"
+              className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-56"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
