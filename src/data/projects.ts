@@ -18,7 +18,24 @@ export const projectsData: (Project & { features?: string[] })[] = [
     github: 'https://github.com/bhuvan2018/news_article_classification'
   },  
   {
-    id: 2,
+  id: 2,
+  title: 'AI-Powered Timetable Generation using Optimization (In Progress)',
+  description: 'Smart Timetable Generation with FastAPI',
+  longDescription: 'An AI-driven web app that generates optimal, clash-free college timetables using constraint programming with Google OR-Tools, integrated through a FastAPI backend and a modern frontend.',
+  image: '/atg.png',
+  technologies: ['Next.js', 'FastAPI', 'OR-Tools', 'Docker', 'Python',],
+  features: [
+    'Automated Timetable Generation',
+    'CSV Upload for Subjects, Teachers & Rooms',
+    'Constraint Satisfaction via OR-Tools',
+    'FastAPI-Powered REST Backend',
+    'Dynamic Frontend with Real-Time Display',
+    'Conflict Detection and Resolution'
+  ],
+  github: 'https://github.com/bhuvan2018/AI-Timetable-Generation',
+},
+  {
+    id: 3,
     title: 'SafeWalk: Ensuring Women Safety in Public Spaces',
     description: 'Mobile App built for women safety',
     longDescription: 'SafeWalk: Ensuring Women Safety in Public Spaces a web app built for the safety of women with features like safe routes, SOS alert messages and many more.',
@@ -33,7 +50,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     github: 'https://github.com/bhuvan2018/safe_walk-App',
   },
   {
-    id: 3,
+    id: 4,
     title: 'TechFusion 2K25',
     description: 'A website built for the Department level IT Fest',
     longDescription: 'Welcome to TechFusion 2K25! This website is designed exclusively for 1st & 2nd-year MCA students of VCET to register for various exciting events in our tech fest.',
@@ -49,7 +66,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     github: 'https://github.com/bhuvan2018/TechFusion2K25',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Quiz Master',
     description: 'A user friendly website built for quiz practices.',
     longDescription: 'Welcome to Quiz Master Website! This website is designed exclusively for users who wants to upscale their general knowledge on Tech.',
@@ -65,7 +82,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     github: 'https://github.com/bhuvan2018/quiztastic-dash',
   },
   {
-    id: 5,
+    id: 6,
     title: 'Pic-to-Toon - Cartoonify Your Memories',
     description: 'A user-friendly app built for transforming your photos into delightful cartoons.',
     longDescription: 'Welcome to Pic-to-Toon! This website lets you transform your photos into delightful cartoons with ease.',
@@ -80,7 +97,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     github: 'https://github.com/bhuvan2018/Pic-to-Toon',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Real-Time IoT Enabled Smart Fuel Flow Meter',
     description: 'An IoT-enabled Smart Fuel Flow Meter to efficiently monitor and manage fuel usage.',
     longDescription: 'Our IoT-enabled Smart Fuel Flow Meter provides real-time, accurate fuel measurements during refueling, enhancing transaction efficiency and preventing fraud.',
