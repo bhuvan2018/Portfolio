@@ -7,7 +7,7 @@ export const experienceData: Experience[] = [
     period: 'Nov 2024 - Jan 2025',
     description: [
       'Led development using Node.js and React',
-      'Improved application performance by 40% through optimization',
+      'Improved application performance through optimization',
     ],
   },
   {
