@@ -25,7 +25,7 @@ export const experienceData: Experience[] = [
     company: 'Freelancing.',
     period: '2023 - present',
     description: [
-      'Developed and maintained projects using React.js & Next.js project',
+      'Developed projects using HTML, CSS, JavaScript, React.js',
       'Collaborated with UX team to improve user experience',
     ],
   },
