@@ -20,7 +20,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
   {
     id: 2,
     title: 'SafeWalk: Ensuring Women Safety in Public Spaces',
-    description: 'Mobile App built for women safety',
+    description: 'Web App built for women safety',
     longDescription: 'SafeWalk: Ensuring Women Safety in Public Spaces a web app built for the safety of women with features like safe routes, SOS alert messages and many more.',
     image: '/safewalk.png',
     technologies: ['React.js', 'Framer-Motion','Tailwind-CSS'],
