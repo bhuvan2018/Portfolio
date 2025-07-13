@@ -6,25 +6,19 @@ export const skillsData: (Skill & { icon: any; description: string })[] = [
     name: 'Frontend Development',
     level: 90,
     icon: Layout,
-    description: 'HTML, Tailwind-CSS, JavaScript, TypeScript, React.js, Framer-Motion',
+    description: 'HTML, Tailwind-CSS, JavaScript, React.js',
   },
   {
     name: 'Backend Development',
     level: 85,
     icon: Server,
-    description: 'Next.js, Node.js, Express.js',
-  },
-  {
-    name: 'Mobile App Development',
-    level: 85,
-    icon: Layout,
-    description: 'React Native, Flet',
+    description: 'Node.js, Express.js',
   },
   {
     name: 'Programming Languages',
     level: 85,
     icon: Code2,
-    description: 'C, Java, Python, TypeScript',
+    description: 'C, Java, Python',
   },
   {
     name: 'Database Management',
