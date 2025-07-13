@@ -16,24 +16,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
       'Text Cleaning and Tokenization'
     ],
     github: 'https://github.com/bhuvan2018/news_article_classification'
-  },  
-  {
-  id: 2,
-  title: 'AI-Powered Timetable Generation using Optimization (In Progress)',
-  description: 'Smart Timetable Generation with FastAPI',
-  longDescription: 'An AI-driven web app that generates optimal, clash-free college timetables using constraint programming with Google OR-Tools, integrated through a FastAPI backend and a modern frontend.',
-  image: '/atg.png',
-  technologies: ['Next.js', 'FastAPI', 'OR-Tools', 'Docker', 'Python',],
-  features: [
-    'Automated Timetable Generation',
-    'CSV Upload for Subjects, Teachers & Rooms',
-    'Constraint Satisfaction via OR-Tools',
-    'FastAPI-Powered REST Backend',
-    'Dynamic Frontend with Real-Time Display',
-    'Conflict Detection and Resolution'
-  ],
-  github: 'https://github.com/bhuvan2018/AI-Timetable-Generation',
-},
+  },
   {
     id: 3,
     title: 'SafeWalk: Ensuring Women Safety in Public Spaces',
@@ -71,7 +54,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     description: 'A user friendly website built for quiz practices.',
     longDescription: 'Welcome to Quiz Master Website! This website is designed exclusively for users who wants to upscale their general knowledge on Tech.',
     image: '/Main.png',
-    technologies: ['React.js', 'Tailwind-CSS', 'TypeScript', 'Express.js', 'Node.js', 'MongoDB'],
+    technologies: ['React.js', 'Tailwind-CSS', 'Express.js', 'Node.js', 'MongoDB'],
     features: [
       'Intuitive User Friendly Website',
       'Quiz Registration',
