@@ -11,6 +11,17 @@ export const experienceData: Experience[] = [
     ],
   },
   {
+  title: 'Smart Pantry & Recipe Planning Web Platform (Hackathon Project)',
+  company: 'VCET College',
+  period: '5-Hour Hackathon – 24th July 2025',
+  description: [
+    'Built a Smart Pantry and Recipe Planning web application using React.js and Tailwind CSS',
+    'Implemented JSON-based storage for pantry management, recipe tracking, and shopping list generation',
+    'Designed a user-friendly interface with features like ingredient matching, missing-item detection, and shopping list export',
+    'Secured 2nd place among multiple teams in the hackathon'
+  ],
+},
+  {
     title: 'Automated News Article Classification (Hackathon Project)',
     company: 'YIASM, Mangalore',
     period: '24 Hours Hackathon 11th - 12th April 2025',
