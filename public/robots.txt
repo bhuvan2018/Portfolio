@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Crawl-delay helps avoid server overload (optional, Vercel handles fine)
+# Crawl-delay: 10
+
 Sitemap: https://bhuvan-shetty.vercel.app/sitemap.xml
