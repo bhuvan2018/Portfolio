@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Bot, User, Loader2, ChevronDown, Sparkles } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, User, ChevronDown, Sparkles } from 'lucide-react';
 
 interface Message {
   text: string;
@@ -33,7 +33,6 @@ const Chatbot = () => {
   const generateResponse = (userMessage: string): string => {
     const normalizedMessage = userMessage.toLowerCase();
     
-    // Predefined responses based on keywords
     if (normalizedMessage.includes('skill') || normalizedMessage.includes('technology')) {
       return "Bhuvan is skilled in React, Node.js, TypeScript, and full-stack development. He's particularly experienced with modern web technologies and responsive design.";
     }
@@ -71,7 +70,6 @@ const Chatbot = () => {
 
     setIsTyping(true);
 
-    // Simulate typing delay
     setTimeout(() => {
       const response = generateResponse(userMessage);
       setMessages(prev => [...prev, { 
@@ -93,128 +91,327 @@ const Chatbot = () => {
 
   return (
     <>
-      <motion.button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-4 right-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full p-4 shadow-lg hover:shadow-blue-500/25 transition-all duration-300 group"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        <MessageCircle className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-      </motion.button>
+      {/* Floating Chat Button */}
+      <motion.div className="fixed bottom-6 right-6 z-50">
+        <motion.button
+          onClick={() => setIsOpen(true)}
+          className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white rounded-full p-5 shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 group overflow-hidden"
+          whileHover={{ scale: 1.1, rotate: 5 }}
+          whileTap={{ scale: 0.95 }}
+          animate={{
+            boxShadow: [
+              '0 10px 40px rgba(59, 130, 246, 0.3)',
+              '0 10px 60px rgba(168, 85, 247, 0.4)',
+              '0 10px 40px rgba(59, 130, 246, 0.3)',
+            ],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          {/* Pulsing ring effect */}
+          <motion.div
+            className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400 to-purple-500"
+            animate={{
+              scale: [1, 1.4, 1],
+              opacity: [0.5, 0, 0.5],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeOut",
+            }}
+          />
 
+          {/* Sparkle particles */}
+          {[...Array(4)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1.5 h-1.5 bg-white rounded-full"
+              style={{
+                top: '50%',
+                left: '50%',
+              }}
+              animate={{
+                x: [0, Math.cos((i * Math.PI) / 2) * 25],
+                y: [0, Math.sin((i * Math.PI) / 2) * 25],
+                opacity: [0, 1, 0],
+                scale: [0, 1, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                delay: i * 0.2,
+              }}
+            />
+          ))}
+
+          <MessageCircle className="w-7 h-7 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
+          
+          {/* Notification badge */}
+          <motion.div
+            className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-xs font-bold shadow-lg"
+            animate={{
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+            }}
+          >
+            !
+          </motion.div>
+        </motion.button>
+      </motion.div>
+
+      {/* Chat Window */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="fixed bottom-20 right-4 w-96 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden border border-blue-100/20 dark:border-blue-500/20"
+            exit={{ opacity: 0, y: 30, scale: 0.9 }}
+            transition={{ duration: 0.3, type: "spring", stiffness: 300, damping: 25 }}
+            className="fixed bottom-28 right-6 w-[420px] bg-white dark:bg-gray-900 rounded-3xl shadow-2xl overflow-hidden border-2 border-blue-100/50 dark:border-blue-500/30 z-50"
+            style={{
+              boxShadow: '0 25px 50px -12px rgba(59, 130, 246, 0.25), 0 0 0 1px rgba(59, 130, 246, 0.1)',
+            }}
           >
-            {/* Header */}
-            <div className="p-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white flex justify-between items-center">
-              <div className="flex items-center gap-2">
-                <Bot className="w-5 h-5" />
-                <h3 className="font-semibold flex items-center gap-2">
-                  Bhuvan's Assistant
-                  <Sparkles className="w-4 h-4 text-yellow-300 animate-pulse" />
-                </h3>
+            {/* Header with gradient */}
+            <div className="relative p-5 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white overflow-hidden">
+              {/* Animated background pattern */}
+              <motion.div
+                className="absolute inset-0 opacity-20"
+                style={{
+                  backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255,255,255,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.3) 0%, transparent 50%)',
+                }}
+                animate={{
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 90, 0],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              />
+
+              <div className="relative flex justify-between items-center">
+                <div className="flex items-center gap-3">
+                  <motion.div
+                    className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-lg"
+                    animate={{
+                      rotate: [0, 5, -5, 0],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <Bot className="w-7 h-7 text-white" />
+                  </motion.div>
+                  <div>
+                    <h3 className="font-bold text-lg flex items-center gap-2">
+                      Bhuvan's AI Assistant
+                      <motion.div
+                        animate={{
+                          rotate: [0, 15, -15, 0],
+                          scale: [1, 1.2, 1],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                        }}
+                      >
+                        <Sparkles className="w-4 h-4 text-yellow-300" />
+                      </motion.div>
+                    </h3>
+                    <p className="text-xs text-white/80 flex items-center gap-1">
+                      <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                      Online now
+                    </p>
+                  </div>
+                </div>
+                
+                <motion.button
+                  onClick={() => setIsOpen(false)}
+                  className="w-10 h-10 hover:bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center transition-all duration-300"
+                  whileHover={{ rotate: 90, scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <X className="w-6 h-6" />
+                </motion.button>
               </div>
-              <motion.button
-                onClick={() => setIsOpen(false)}
-                className="hover:bg-white/20 p-1 rounded-full transition-colors"
-                whileHover={{ rotate: 90 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <X className="w-5 h-5" />
-              </motion.button>
             </div>
 
-            {/* Chat Container */}
-            <div ref={chatContainerRef} className="h-[400px] flex flex-col">
-              <div className="flex-1 p-4 overflow-y-auto space-y-4 scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-transparent">
+            {/* Chat Messages Container */}
+            <div ref={chatContainerRef} className="h-[450px] flex flex-col bg-gradient-to-br from-gray-50 to-blue-50/30 dark:from-gray-900 dark:to-gray-800">
+              <div className="flex-1 p-5 overflow-y-auto space-y-4 scrollbar-thin scrollbar-thumb-blue-500/50 scrollbar-track-transparent">
                 {messages.map((message, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className={`flex ${message.isBot ? 'justify-start' : 'justify-end'} items-end gap-2`}
+                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.3, type: "spring" }}
+                    className={`flex ${message.isBot ? 'justify-start' : 'justify-end'} items-end gap-3`}
                   >
                     {message.isBot && (
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center flex-shrink-0">
-                        <Bot className="w-5 h-5 text-white" />
-                      </div>
+                      <motion.div 
+                        className="w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-lg"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                      >
+                        <Bot className="w-6 h-6 text-white" />
+                      </motion.div>
                     )}
                     
                     <motion.div
-                      className={`max-w-[80%] p-3 rounded-2xl ${
+                      whileHover={{ scale: 1.02 }}
+                      className={`max-w-[75%] px-4 py-3 rounded-3xl shadow-lg ${
                         message.isBot
-                          ? 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-bl-none'
-                          : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-br-none'
+                          ? 'bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-bl-md border border-gray-100 dark:border-gray-700'
+                          : 'bg-gradient-to-br from-blue-600 via-purple-600 to-blue-700 text-white rounded-br-md'
                       }`}
                     >
-                      <p className="text-sm">{message.text}</p>
-                      <p className="text-xs mt-1 opacity-60">{formatTime(message.timestamp)}</p>
+                      <p className="text-sm leading-relaxed">{message.text}</p>
+                      <p className={`text-xs mt-2 flex items-center gap-1 ${
+                        message.isBot ? 'text-gray-400' : 'text-white/70'
+                      }`}>
+                        <span className="w-1 h-1 rounded-full bg-current"></span>
+                        {formatTime(message.timestamp)}
+                      </p>
                     </motion.div>
 
                     {!message.isBot && (
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center flex-shrink-0">
-                        <User className="w-5 h-5 text-white" />
-                      </div>
+                      <motion.div 
+                        className="w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-lg"
+                        whileHover={{ scale: 1.1, rotate: -5 }}
+                      >
+                        <User className="w-6 h-6 text-white" />
+                      </motion.div>
                     )}
                   </motion.div>
                 ))}
                 
+                {/* Typing Indicator */}
                 {isTyping && (
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center">
-                      <Bot className="w-5 h-5 text-white" />
+                  <motion.div 
+                    className="flex items-center gap-3"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                  >
+                    <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg">
+                      <Bot className="w-6 h-6 text-white" />
                     </div>
-                    <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded-2xl rounded-bl-none">
-                      <Loader2 className="w-5 h-5 animate-spin text-blue-500" />
+                    <div className="bg-white dark:bg-gray-800 px-5 py-3 rounded-3xl rounded-bl-md shadow-lg border border-gray-100 dark:border-gray-700">
+                      <div className="flex gap-1.5">
+                        {[0, 1, 2].map((i) => (
+                          <motion.div
+                            key={i}
+                            className="w-2.5 h-2.5 bg-blue-500 rounded-full"
+                            animate={{
+                              y: [-3, 0, -3],
+                              scale: [1, 1.2, 1],
+                            }}
+                            transition={{
+                              duration: 0.6,
+                              repeat: Infinity,
+                              delay: i * 0.15,
+                            }}
+                          />
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  </motion.div>
                 )}
                 
                 <div ref={messagesEndRef} />
               </div>
 
               {/* Input Area */}
-              <div className="p-4 border-t dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                    placeholder="Ask about skills, projects, etc..."
-                    className="flex-1 px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                  />
+              <div className="p-4 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-t-2 border-gray-100/50 dark:border-gray-700/50">
+                <div className="flex gap-3">
+                  <div className="flex-1 relative">
+                    <input
+                      type="text"
+                      value={input}
+                      onChange={(e) => setInput(e.target.value)}
+                      onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                      placeholder="Type your message..."
+                      className="w-full px-5 py-3.5 rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder:text-gray-400 shadow-sm"
+                    />
+                    {/* Input glow effect on focus */}
+                    <motion.div
+                      className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-xl opacity-0 pointer-events-none"
+                      animate={{
+                        opacity: input.length > 0 ? 0.5 : 0,
+                      }}
+                    />
+                  </div>
+                  
                   <motion.button
                     onClick={handleSend}
                     disabled={!input.trim() || isTyping}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="p-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:shadow-lg hover:shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed transition-all group"
+                    className="relative p-3.5 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-700 text-white rounded-2xl hover:shadow-xl hover:shadow-blue-500/40 disabled:opacity-50 disabled:cursor-not-allowed transition-all group overflow-hidden"
                   >
-                    <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    {/* Button shine effect */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12"
+                      animate={{
+                        x: ['-200%', '200%'],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatDelay: 1,
+                      }}
+                    />
+                    
+                    <Send className="w-5 h-5 relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </motion.button>
                 </div>
+
+                {/* Quick suggestions */}
+                <motion.div 
+                  className="flex gap-2 mt-3 overflow-x-auto scrollbar-none"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: messages.length === 1 ? 1 : 0, y: messages.length === 1 ? 0 : 10 }}
+                >
+                  {['Skills', 'Projects', 'Experience'].map((suggestion) => (
+                    <motion.button
+                      key={suggestion}
+                      onClick={() => setInput(suggestion)}
+                      className="px-4 py-2 bg-blue-50 dark:bg-gray-800 text-blue-600 dark:text-blue-400 rounded-xl text-xs font-medium hover:bg-blue-100 dark:hover:bg-gray-700 transition-all whitespace-nowrap border border-blue-100 dark:border-gray-700"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {suggestion}
+                    </motion.button>
+                  ))}
+                </motion.div>
               </div>
             </div>
 
-            {/* Scroll Indicator */}
-            <motion.button
-              onClick={() => scrollToBottom()}
-              className="absolute bottom-20 right-4 p-2 bg-blue-600 text-white rounded-full shadow-lg opacity-0 hover:bg-blue-700 transition-all"
-              animate={{
-                opacity: messages.length > 4 ? 1 : 0,
-                scale: messages.length > 4 ? 1 : 0,
-              }}
-            >
-              <ChevronDown className="w-4 h-4" />
-            </motion.button>
+            {/* Scroll to bottom button */}
+            <AnimatePresence>
+              {messages.length > 5 && (
+                <motion.button
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0 }}
+                  onClick={() => scrollToBottom()}
+                  className="absolute bottom-24 right-6 p-2.5 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all z-10"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <ChevronDown className="w-5 h-5" />
+                </motion.button>
+              )}
+            </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>
