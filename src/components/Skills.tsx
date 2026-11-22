@@ -24,7 +24,7 @@ const technologyIcons: Record<string, IconType> = {
 
 const TechnologyChip = ({ name }: { name: string }) => {
   const Icon = technologyIcons[name];
-  return <span className="inline-flex items-center gap-2 border border-white/10 bg-white/[.03] px-2.5 py-2 text-xs text-[#b7c0cb] transition-colors hover:border-[#e6b84c]/50 hover:text-white"><span className="flex h-4 w-4 items-center justify-center text-[#e6b84c]">{Icon ? <Icon size={14} /> : <span className="font-mono text-[9px]">{name === 'AWS EC2' ? 'AWS' : name.slice(0, 2).toUpperCase()}</span>}</span>{name}</span>;
+  return <span className="inline-flex h-9 items-center gap-2 border border-white/10 bg-white/[.03] px-2.5 text-xs leading-none text-[#b7c0cb] transition-colors hover:border-[#e6b84c]/50 hover:text-white"><span className="flex h-4 w-4 shrink-0 items-center justify-center text-[#e6b84c]">{Icon ? <Icon size={14} /> : <span className="font-mono text-[9px]">{name === 'AWS EC2' ? 'AWS' : name.slice(0, 2).toUpperCase()}</span>}</span><span className="whitespace-nowrap">{name}</span></span>;
 };
 
 const Skills = () => (

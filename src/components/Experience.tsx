@@ -32,7 +32,7 @@ const Experience = () => {
       <div className="relative ml-0 pl-8 md:pl-14"><motion.div style={{ scaleY: lineProgress }} className="absolute bottom-0 left-1.5 top-0 w-px origin-top bg-[#e6b84c]" />{experienceData.map((experience, index) => <motion.article key={`${experience.company}-${experience.period}`} initial={{ opacity: 0, x: -25 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: index * .08 }} className="relative mb-16 last:mb-0">
         <motion.span whileInView={{ scale: [1, 1.5, 1] }} viewport={{ once: true }} transition={{ duration: .5 }} className="absolute -left-[2.65rem] top-1 h-3 w-3 rounded-full border-2 border-[#111820] bg-[#e6b84c] md:-left-[3.45rem]" />
         <div className="mb-5 flex flex-wrap items-center gap-x-5 gap-y-2"><h3 className="text-2xl font-bold tracking-[-.05em] text-white">{experience.title}</h3><span className="font-mono text-xs text-[#e6b84c]">{experience.period}</span></div>
-        <div className="mb-6 flex items-center gap-3 text-sm text-[#9aa4b2]"><CompanyMark company={experience.company} /><span>{experience.company}</span><Calendar size={15} className="ml-2" /></div>
+        <div className="mb-6 flex flex-wrap items-center gap-3 text-sm text-[#9aa4b2]"><CompanyMark company={experience.company} /><span className="break-words">{experience.company}</span><Calendar size={15} className="ml-2" /></div>
         <ul className="grid max-w-4xl gap-3 text-sm leading-7 text-[#9aa4b2] md:grid-cols-2">{experience.description.map((item) => <li key={item} className="border-l border-white/10 pl-4">{item}</li>)}</ul>
       </motion.article>)}</div>
     </div>

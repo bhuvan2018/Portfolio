@@ -22,15 +22,15 @@ const Hero = () => {
   return (
     <section ref={ref} id="home" onMouseMove={handleMouseMove} onMouseLeave={resetMouse} className="page-panel relative flex min-h-screen items-center overflow-hidden border-b border-white/10 pt-20">
       <motion.div style={{ y, opacity }} className="pointer-events-none absolute inset-0">
-        <div className="absolute right-[4%] top-1/2 hidden h-[22rem] w-[22rem] -translate-y-1/2 xl:block">
+        <div className="absolute right-4 top-24 h-32 w-32 md:right-8 md:top-28 md:h-44 md:w-44 xl:right-[4%] xl:top-1/2 xl:h-[22rem] xl:w-[22rem] xl:-translate-y-1/2">
           <motion.div style={{ rotateX: photoRotateX, rotateY: photoRotateY }} className="h-full w-full overflow-hidden rounded-full border border-[#e6b84c]/25 bg-[#151c25] [perspective:1000px]"><img src="/dp.jpeg" alt="Bhuvan Shetty" className="h-full w-full scale-110 object-cover object-[center_18%]" /><div className="absolute inset-4 rounded-full border border-[#e6b84c]/30" /></motion.div>
         </div>
         <div className="absolute bottom-0 left-0 h-1/2 w-full bg-[linear-gradient(to_bottom,transparent,rgba(230,184,76,.04))]" />
       </motion.div>
-      <div className="section-frame relative grid gap-16 py-20 lg:grid-cols-[1fr_1fr] lg:items-center lg:py-28">
+      <div className="section-frame relative grid gap-12 py-20 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16 lg:py-28">
         <div>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.25 }} className="mb-8 font-mono text-xs uppercase tracking-[.2em] text-[#e6b84c]">Software Engineer</motion.p>
-          <h1 className="max-w-5xl text-[clamp(4rem,12vw,10.5rem)] font-extrabold leading-[.82] tracking-[-.1em] text-white">
+          <h1 className="max-w-[82%] text-[clamp(4rem,12vw,10.5rem)] font-extrabold leading-[.82] tracking-[-.1em] text-white md:max-w-5xl">
             {name.map((word, index) => <span key={word} className="-mb-[0.12em] block overflow-hidden pb-[0.12em]"><motion.span initial={{ y: '110%' }} animate={{ y: 0 }} transition={{ duration: 1, delay: 1.35 + index * .12, ease: [.2, .8, .2, 1] }} className="block">{word}</motion.span></span>)}
           </h1>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.75 }} className="mt-12 flex flex-wrap items-center gap-4">
