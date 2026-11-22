@@ -1,6 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useLayoutEffect, useEffect } from 'react';
+import Lenis from 'lenis';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
+import Preloader from './components/Preloader';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -9,48 +13,62 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import CursorEffect from './components/CursorEffect';
-import Preloader from './components/Preloader';
-import VisitorCounter from './components/VisitorCounter';
-import Chatbot from './components/Chatbot';
-import MusicToggle from './components/MusicToggle';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  const [isDark, setIsDark] = useState(() => {
-    const savedTheme = localStorage.getItem('theme');
-    return savedTheme ? savedTheme === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-  });
-
   useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  }, [isDark]);
+    const lenis = new Lenis({ duration: 1.5, lerp: 0.075, smoothWheel: true, syncTouch: false, wheelMultiplier: 0.85 });
+    const update = (time: number) => lenis.raf(time * 1000);
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(update);
+    gsap.ticker.lagSmoothing(0);
+    return () => {
+      gsap.ticker.remove(update);
+      lenis.off('scroll', ScrollTrigger.update);
+      lenis.destroy();
+    };
+  }, []);
 
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-  };
+  useLayoutEffect(() => {
+    const context = gsap.context(() => {
+      const sections = gsap.utils.toArray<HTMLElement>('main > section');
+      sections.slice(1).forEach((section) => {
+        gsap.fromTo(section,
+          { clipPath: 'inset(8% 0 0 0)', y: 34, scale: 0.992 },
+          {
+            clipPath: 'inset(0% 0 0 0)',
+            y: 0,
+            scale: 1,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: section,
+              start: 'top bottom',
+              end: 'top 42%',
+              scrub: 1.7,
+            },
+          }
+        );
+      });
+    });
+    return () => context.revert();
+  }, []);
 
   return (
     <HelmetProvider>
       <Preloader />
-      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-        <CursorEffect />
-        <Navbar isDark={isDark} toggleTheme={toggleTheme} />
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Education />
-        <Contact />
+      <div className="site-shell">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Experience />
+          <Education />
+          <Contact />
+        </main>
         <Footer />
-        <VisitorCounter />
-        <Chatbot />
-        <MusicToggle />
       </div>
     </HelmetProvider>
   );

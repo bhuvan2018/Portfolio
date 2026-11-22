@@ -2,6 +2,19 @@ import type { Experience } from '../types';
 
 export const experienceData: Experience[] = [
   {
+    title: 'Software Engineer',
+    company: 'SELCO Foundation',
+    period: 'March 2026 - Present',
+    description: [
+      'Build and maintain digital platforms, IVR systems, RMS record-tracking applications, public-facing government applications, and operational dashboards',
+      'Develop Setu Connect, a React and Node.js platform that helps end users and partners apply for SELCO Foundation livelihood support programmes',
+      'Build Setu4Livelihood, a Node.js and Express IVR backend integrating Plivo, PostgreSQL, REST APIs, and multilingual voice services',
+      'Develop RMS applications for tracking solar installations, meter replacements, field operations, imports, role-based access, and analytics',
+      'Design and maintain REST APIs, PostgreSQL and MySQL data workflows, Docker-based development environments, and AWS-hosted applications',
+      'Write and maintain automated tests using Playwright, Vitest, Supertest, and Postman to improve reliability and user experience',
+    ],
+  },
+  {
     title: 'MERN Stack Intern',
     company: 'Zephyr Technologies & Solutions Pvt Ltd.',
     period: 'Nov 2024 - Jan 2025',
@@ -10,27 +23,6 @@ export const experienceData: Experience[] = [
       'Improved application performance through optimization',
     ],
   },
-  {
-  title: 'Smart Pantry & Recipe Planning Web Platform (Hackathon Project)',
-  company: 'VCET College',
-  period: '5-Hour Hackathon – 24th July 2025',
-  description: [
-    'Built a Smart Pantry and Recipe Planning web application using React.js and Tailwind CSS',
-    'Implemented JSON-based storage for pantry management, recipe tracking, and shopping list generation',
-    'Designed a user-friendly interface with features like ingredient matching, missing-item detection, and shopping list export',
-    'Secured 2nd place among multiple teams in the hackathon'
-  ],
-},
-  {
-    title: 'Automated News Article Classification (Hackathon Project)',
-    company: 'YIASM, Mangalore',
-    period: '24 Hours Hackathon 11th - 12th April 2025',
-    description: [
-      'Built an intelligent system for classifying news articles using NLP techniques like tokenization, lemmatization, and vectorization',
-      'Integrated a clean Flet-based UI for real-time classification and visualization',
-      'Implemented ML models with Scikit-learn and experimented with BERT for enhanced accuracy'
-    ],
-  },  
   {
     title: 'Freelancer',
     company: 'Freelancing.',

@@ -41,7 +41,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     description: 'Web App built for women safety',
     longDescription: 'SafeWalk: Ensuring Women Safety in Public Spaces a web app built for the safety of women with features like safe routes, SOS alert messages and many more.',
     image: '/safewalk.png',
-    technologies: ['React.js', 'Framer-Motion','Tailwind-CSS'],
+    technologies: ['React.js', 'Node.js', 'Express.js', 'Firebase'],
     features: [
       'SOS Alert',
       'Emergency Live Location Sharing',
@@ -87,7 +87,7 @@ export const projectsData: (Project & { features?: string[] })[] = [
     description: 'A user-friendly app built for transforming your photos into delightful cartoons.',
     longDescription: 'Welcome to Pic-to-Toon! This website lets you transform your photos into delightful cartoons with ease.',
     image: '/PTT.png',
-    technologies: ['Flet', 'Python', 'Docker'],
+    technologies: ['Flet', 'Python', 'Docker', 'Deep Learning'],
     features: [
       'User-friendly interface',
       'Easy photo upload and cartoonization',
