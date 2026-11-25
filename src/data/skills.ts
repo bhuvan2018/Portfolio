@@ -12,7 +12,7 @@ export const skillsData: (Skill & { icon: any; description: string })[] = [
     name: 'Backend & APIs',
     level: 85,
     icon: Server,
-    description: 'Node.js, Express.js, Go, REST APIs',
+    description: 'Node.js, Express.js, Go, Prisma ORM, REST APIs',
   },
   {
     name: 'Database Management',

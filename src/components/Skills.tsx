@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { skillsData } from '../data/skills';
 import type { IconType } from 'react-icons';
-import { SiCss, SiDocker, SiExpress, SiGit, SiGithub, SiGo, SiHtml5, SiJavascript, SiMysql, SiNodedotjs, SiPostman, SiPostgresql, SiReact, SiSwagger, SiTailwindcss, SiVitest } from 'react-icons/si';
+import { SiCss, SiDocker, SiExpress, SiGit, SiGithub, SiGo, SiHtml5, SiJavascript, SiMysql, SiNodedotjs, SiPostman, SiPostgresql, SiPrisma, SiReact, SiSwagger, SiTailwindcss, SiVitest } from 'react-icons/si';
 
 const technologyIcons: Record<string, IconType> = {
   HTML: SiHtml5,
@@ -12,6 +12,7 @@ const technologyIcons: Record<string, IconType> = {
   'Node.js': SiNodedotjs,
   'Express.js': SiExpress,
   Go: SiGo,
+  'Prisma ORM': SiPrisma,
   PostgreSQL: SiPostgresql,
   MySQL: SiMysql,
   Docker: SiDocker,
