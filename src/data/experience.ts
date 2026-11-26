@@ -19,7 +19,7 @@ export const experienceData: Experience[] = [
     company: 'Zephyr Technologies & Solutions Pvt Ltd.',
     period: 'Nov 2024 - Jan 2025',
     description: [
-      'Led development using Node.js and React',
+      'Led development using Node and React',
       'Improved application performance through optimization',
     ],
   },
